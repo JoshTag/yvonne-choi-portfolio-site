@@ -2,22 +2,112 @@ backend:
   name: git-gateway
   branch: master
 
+# local_backend: true
+
+publish_mode: editorial_workflow
+
 media_folder: static/img
 public_folder: /img
 
+# site_url: https://trusting-kare-10405d.netlify.app
+
+# display_url: https://trusting-kare-10405d.netlify.app
+
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
-    create: true
-    slug: 'index'
-    media_folder: ''
-    public_folder: ''
-    path: '{{title}}/index'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/cms/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: "Testimonials",
+              name: "testimonials",
+              widget: list,
+              fields:
+                [
+                  { label: Quote, name: quote, widget: string },
+                  { label: Author, name: author, widget: string },
+                  {
+                    label: Position,
+                    name: position,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+      - file: "src/cms/biography/index.md"
+        label: "Biography Page"
+        name: "biography"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "biography-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/cms/concerts/index.md"
+        label: "Concerts Page"
+        name: "concerts"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "concerts-page",
+            }
+          - { label: "Title", name: title, widget: string }
+          - {
+              label: "Concerts",
+              name: concerts,
+              widget: list,
+              fields:
+                [
+                  { label: Month, name: month, widget: string },
+                  {
+                    label: Concert,
+                    name: concert,
+                    widget: list,
+                    fields:
+                      [
+                        {
+                          label: Concert Name,
+                          name: concertName,
+                          widget: string,
+                        },
+                        {
+                          label: Concert Date,
+                          name: concertDate,
+                          widget: datetime,
+                          default: "",
+                          date_format: "DD.MM",
+                          time_format: "HH:mm",
+                          format: "LLL",
+                          picker_utc: false,
+                        },
+                        {
+                          label: Concert Venue,
+                          name: concertVenue,
+                          widget: string,
+                        },
+                        {
+                          label: Concert Location,
+                          name: concertLocation,
+                          widget: string,
+                        },
+                      ],
+                  },
+                ],
+            }

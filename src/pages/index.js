@@ -1,72 +1,46 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+const IndexPage = ({ data }) => {
+
+  if (!data) {
+    return null
+  }
+  const { heading, subheading, testimonials } = data.markdownRemark.frontmatter
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+    <Layout>
+      <h1>{heading}</h1>
+      <p>{subheading}</p>
+      {testimonials.map(item => {
         return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
+          <div>
+            <p>{item.quote}</p>
+            <p>{item.author}</p>
+            <p>{item.position}</p>
+          </div>
         )
       })}
     </Layout>
   )
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
+export const query = graphql`
+  {
+    markdownRemark(frontmatter: { title: { eq: "Index" } }) {
+      frontmatter {
+        heading
+        subheading
+        testimonials {
+          author
+          position
+          quote
         }
       }
     }
   }
 `
+
+export default IndexPage
