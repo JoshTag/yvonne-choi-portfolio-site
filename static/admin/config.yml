@@ -2,22 +2,22 @@ backend:
   name: git-gateway
   branch: master
 
-# local_backend: true
+local_backend: true
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img
 
-# site_url: https://trusting-kare-10405d.netlify.app
+site_url: https://trusting-kare-10405d.netlify.app
 
-# display_url: https://trusting-kare-10405d.netlify.app
+display_url: https://trusting-kare-10405d.netlify.app
 
 collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/cms/index.md"
+      - file: "src/content/index.md"
         label: "Landing Page"
         name: "index"
         fields:
@@ -46,7 +46,7 @@ collections:
                   },
                 ],
             }
-      - file: "src/cms/biography/index.md"
+      - file: "src/content/biography/index.md"
         label: "Biography Page"
         name: "biography"
         fields:
@@ -58,7 +58,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/cms/concerts/index.md"
+      - file: "src/content/concerts/index.md"
         label: "Concerts Page"
         name: "concerts"
         fields:

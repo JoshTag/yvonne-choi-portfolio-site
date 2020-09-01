@@ -3,15 +3,9 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 
-const IndexPage = ({ data }) => {
-
-  if (!data) {
-    return null
-  }
-  const { heading, subheading, testimonials } = data.markdownRemark.frontmatter
-
+export const IndexPageTemplate = ({ heading, subheading, testimonials }) => {
   return (
-    <Layout>
+    <>
       <h1>{heading}</h1>
       <p>{subheading}</p>
       {testimonials.map(item => {
@@ -23,6 +17,20 @@ const IndexPage = ({ data }) => {
           </div>
         )
       })}
+    </>
+  )
+}
+
+const IndexPage = ({ data }) => {
+  const { heading, subheading, testimonials } = data.markdownRemark.frontmatter
+
+  return (
+    <Layout>
+      <IndexPageTemplate
+        heading={heading}
+        subheading={subheading}
+        testimonials={testimonials}
+      />
     </Layout>
   )
 }
