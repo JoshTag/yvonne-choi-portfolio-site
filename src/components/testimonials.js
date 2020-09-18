@@ -1,5 +1,5 @@
 import React from "react"
-// import Carousel from "./carousel"
+import Carousel from "./carousel"
 import styled from "styled-components"
 import { colours } from "./../styles/styles"
 
@@ -27,6 +27,7 @@ const TitleContainer = styled.div`
   transform: translateX(-50%);
   background-color: ${colours.white};
   padding: 0 0.5rem;
+  z-index: 100;
 `
 
 const TitleBorder = styled.div`
@@ -39,20 +40,20 @@ const TestimonialsTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
   border: 1px ${colours.brown} solid;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
 `
 
 const Testimonials = ({ testimonials }) => {
-  // console.log(testimonials)
   return (
     <TestimonialsSection>
-      <TestimonialsBoarder />
       <TitleContainer>
         <TitleBorder>
           <TestimonialsTitle>Testimonials</TestimonialsTitle>
         </TitleBorder>
       </TitleContainer>
-      {/* <Carousel></Carousel> */}
+      <TestimonialsBoarder>
+        <Carousel testimonials={testimonials} />
+      </TestimonialsBoarder>
     </TestimonialsSection>
   )
 }

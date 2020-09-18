@@ -32,10 +32,9 @@ module.exports = {
         name: 'images',
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     {
@@ -48,6 +47,12 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

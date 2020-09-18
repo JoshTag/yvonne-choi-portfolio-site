@@ -11,6 +11,14 @@ testimonials:
       For us, her talent adds immeasurable depth to our church life.
     author: John and Barbara Fleming
     position: Glen Abbey United Church
+  - quote: We were thrilled to have Yvonne play at our wedding reception. She was
+      easy to communicate with beforehand, so we felt confident we were in good
+      hands. We had a wide range in the age of our guests and Yvonne was able to
+      put a playlist together that had songs everyone knew. Our guests commented
+      that having a live piano player was a really nice surprise and how much
+      they enjoyed her music. It was a pleasure having Yvonne join us on our
+      special day.
+    author: Brad and Nadia
   - quote: We are a choir of volunteers with a range of ages, experience, and
       abilities. With patience and enthusiasm, Yvonne challenges and encourages
       us, and inspires us to be better than we ever thought we could be. Working
@@ -22,14 +30,6 @@ testimonials:
       REALLY fun to be around. "
     author: David Anderson
     position: Artist Director of A Few Good Men (Oakville Choir for Children & Youth)
-  - quote: We were thrilled to have Yvonne play at our wedding reception. She was
-      easy to communicate with beforehand, so we felt confident we were in good
-      hands. We had a wide range in the age of our guests and Yvonne was able to
-      put a playlist together that had songs everyone knew. Our guests commented
-      that having a live piano player was a really nice surprise and how much
-      they enjoyed her music. It was a pleasure having Yvonne join us on our
-      special day.
-    author: Brad & Nadia
   - quote: Yvonne has made our church’s piano “sing” in a way we’ve never
       experienced before. With incredible musicality, she offers us postlude
       that has the entire congregation entranced and staying in the sanctuary
@@ -38,4 +38,10 @@ testimonials:
       ministry to another level.
     author: Katherine Ward
     position: Choir Member, Glen Abbey United Church
+about: An accomplished solo and collaborative pianist, Yvonne Choi has had
+  tremendous success working with both singers and instrumentalists in the
+  Greater Toronto Area and Kitchener/Waterloo. Building on her Bachelor of Music
+  from Wilfrid Laurier under the guidance of Leslie De'Ath, Yvonne has completed
+  her Masters in Collaborative Piano Performance under Lydia Wong from
+  University of Toronto.
 ---

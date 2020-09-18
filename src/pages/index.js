@@ -4,10 +4,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Testimonials from "../components/testimonials"
+import MiniBio from "../components/miniBio"
 
-import Carousel from "../components/carousel"
-
-export const IndexPageTemplate = ({ heading, subheading, testimonials }) => {
+export const IndexPageTemplate = ({ heading, subheading, testimonials, about }) => {
   return (
     <>
       <Hero 
@@ -15,13 +14,13 @@ export const IndexPageTemplate = ({ heading, subheading, testimonials }) => {
         subheading={subheading}
       />
       <Testimonials testimonials={testimonials}/>
-      <Carousel />
+      <MiniBio about={about} />
     </>
   )
 }
 
 const IndexPage = ({ data }) => {
-  const { heading, subheading, testimonials } = data.markdownRemark.frontmatter
+  const { heading, subheading, testimonials, about } = data.markdownRemark.frontmatter
 
   return (
     <Layout>
@@ -29,6 +28,7 @@ const IndexPage = ({ data }) => {
         heading={heading}
         subheading={subheading}
         testimonials={testimonials}
+        about={about}
       />
     </Layout>
   )
@@ -36,10 +36,11 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: { title: { eq: "Index" } }) {
+    markdownRemark(frontmatter: {title: {eq: "Index"}}) {
       frontmatter {
         heading
         subheading
+        about
         testimonials {
           author
           position
