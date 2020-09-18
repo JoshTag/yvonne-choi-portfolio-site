@@ -2,16 +2,16 @@ backend:
   name: git-gateway
   branch: master
 
-local_backend: true
+# local_backend: true
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img
 
-site_url: https://xenodochial-noyce-a4a307.netlify.app
+# site_url: https://xenodochial-noyce-a4a307.netlify.app
 
-display_url: https://xenodochial-noyce-a4a307.netlify.app
+# display_url: https://xenodochial-noyce-a4a307.netlify.app
 
 collections:
   - name: "pages"
