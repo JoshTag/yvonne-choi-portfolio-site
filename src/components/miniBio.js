@@ -1,11 +1,21 @@
 import React from "react"
 import styled from "styled-components"
-import { colours } from "../styles/master"
+import { colours, breakpoints } from "../styles/master"
 import { Link } from "gatsby"
 
 const MiniBioContainer = styled.section`
   position: relative;
   background-color: ${colours.black};
+
+  @media only screen and (min-width: ${breakpoints.desktop}){
+    :after {
+      content: " ";
+      position: absolute;
+      width: 100%;
+      height: 10rem;
+      background-color: ${colours.black};
+    }
+  }
 `
 
 const MiniBioBoarder = styled.div`
@@ -15,6 +25,13 @@ const MiniBioBoarder = styled.div`
   width: 90%;
   height: 85%;
   border: solid ${colours.white} 1px;
+
+  @media only screen and (min-width: ${breakpoints.tablet}){
+    top: 20%;
+    left: 6%;
+    width: 88%;
+    height: 75%;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -26,7 +43,10 @@ const TitleContainer = styled.div`
   transform: translateX(-50%);
   background-color: ${colours.black};
   padding: 0 0.5rem;
-  z-index: 100;
+  z-index: 10;
+  @media only screen and (min-width: ${breakpoints.tablet}){
+    top: 12%;
+  }
 `
 
 const TitleBorder = styled.div`
@@ -40,17 +60,33 @@ const MiniBioTitle = styled.h2`
   font-weight: 400;
   border: 1px ${colours.white} solid;
   padding: 0.5rem 2rem;
+  width: 105px;
+  text-align: center;
 `
 
 const AboutContents = styled.div`
   color: ${colours.white};
   padding: 25% 15% 20%;
+
+  @media only screen and (min-width: ${breakpoints.tabletSmall}){
+    padding: 20% 10% 10%;
+  }
+  @media only screen and (min-width: ${breakpoints.desktop}){
+    padding: 9rem 12rem 8rem;
+  }
 `
 
 const BioParagraph = styled.p`
   font-size: 0.75rem;
   line-height: 2;
   margin-bottom: 1.5rem;
+
+  @media only screen and (min-width: ${breakpoints.desktop}){
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 1024px;
+    margin: 0 auto 2rem;
+  }
 `
 
 const BioLink = styled(Link)`

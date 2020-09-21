@@ -1,12 +1,19 @@
 import React from "react"
 import Carousel from "./carousel"
 import styled from "styled-components"
-import { colours } from "../styles/master"
+import { colours, breakpoints } from "../styles/master"
 
 const TestimonialsSection = styled.section`
   position: relative;
   background-color: ${colours.white};
   height: 600px;
+
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    height: 650px;
+  }
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    height: 760px;
+  }
 `
 
 const TestimonialsBoarder = styled.div`
@@ -16,6 +23,17 @@ const TestimonialsBoarder = styled.div`
   width: 90%;
   height: 85%;
   border: solid ${colours.brown} 1px;
+
+  @media only screen and (min-width: ${breakpoints.tabletSmall}){
+    top: 8%;
+    left: 6%;
+    width: 88%;
+    height: 84%;
+  }
+
+  @media only screen and (min-width: 700px) {
+    top: 11%;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -27,7 +45,14 @@ const TitleContainer = styled.div`
   transform: translateX(-50%);
   background-color: ${colours.white};
   padding: 0 0.5rem;
-  z-index: 100;
+  z-index: 10;
+
+  @media only screen and (min-width: ${breakpoints.tabletSmall}) {
+    top: 3%;
+  }
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    top: 6%;
+  }
 `
 
 const TitleBorder = styled.div`

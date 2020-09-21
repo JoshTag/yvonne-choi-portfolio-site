@@ -5,6 +5,7 @@ import "../styles/slick-theme.scss"
 import styled from "styled-components"
 import startQuote from "./../img/starting-quote.svg"
 import endQuote from "./../img/ending-quote.svg"
+import { breakpoints } from "./../styles/master"
 
 const CarouselContainer = styled.div`
   padding: 3px 2rem;
@@ -16,6 +17,18 @@ const QuoteContainer = styled.div`
   height: 400px;
   display: grid !important;
   place-items: center;
+
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    padding: 3rem 1rem;
+    height: 450px;
+  }
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    padding: 3rem 3rem;
+    height: 550px;
+  }
+  @media only screen and (min-width: ${breakpoints.desktopLarge}) {
+    padding: 3rem 5rem;
+  }
 `
 
 const TestimonialQuote = styled.p`
@@ -23,6 +36,11 @@ const TestimonialQuote = styled.p`
   font-size: 0.75rem;
   line-height: 2;
   padding: 0 1.5rem;
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
 
   :before {
     content: " ";
