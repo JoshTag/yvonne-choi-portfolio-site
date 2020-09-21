@@ -36,7 +36,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: {title: {eq: "Index"}}) {
+    markdownRemark(frontmatter: {title: {eq: "Landing"}}) {
       frontmatter {
         heading
         subheading

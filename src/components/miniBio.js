@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { colours } from "./../styles/styles"
+import { colours } from "../styles/master"
 import { Link } from "gatsby"
 
 const MiniBioContainer = styled.section`

@@ -1,5 +1,5 @@
 ---
-title: Index
+title: Landing
 heading: Yvonne Choi
 subheading: Hon. B.Mus, M.Mus, ATCL
 testimonials:

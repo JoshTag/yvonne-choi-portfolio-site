@@ -1,7 +1,7 @@
 import React from "react"
 import Carousel from "./carousel"
 import styled from "styled-components"
-import { colours } from "./../styles/styles"
+import { colours } from "../styles/master"
 
 const TestimonialsSection = styled.section`
   position: relative;
