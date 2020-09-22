@@ -5,7 +5,6 @@ import { breakpoints } from "./../styles/master"
 
 const HeroSection = styled.section`
   position: relative;
-  width: 100vw;
   height: 320px;
   background-image: url(${heroImage});
   background-position: center;
@@ -18,10 +17,6 @@ const HeroSection = styled.section`
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 800px;
   }
-
-  /* @media only screen and (min-width: ${breakpoints.desktopLarge}) {
-    height: 900px;
-  } */
 `
 
 const HeroBorder = styled.div`
