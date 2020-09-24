@@ -24,7 +24,7 @@ const MiniBioBoarder = styled.div`
   left: 5%;
   width: 90%;
   height: 85%;
-  border: solid ${colours.white} 1px;
+  border: solid ${colours.primary} 1px;
 
   @media only screen and (min-width: ${breakpoints.tablet}){
     top: 20%;
@@ -50,22 +50,22 @@ const TitleContainer = styled.div`
 `
 
 const TitleBorder = styled.div`
-  border: 2px ${colours.white} solid;
+  border: 2px ${colours.primary} solid;
   padding: 0.25rem 0.25rem;
 `
 
 const MiniBioTitle = styled.h2`
-  color: ${colours.white};
+  color: ${colours.primary};
   font-size: 1.5rem;
   font-weight: 400;
-  border: 1px ${colours.white} solid;
+  border: 1px ${colours.primary} solid;
   padding: 0.5rem 2rem;
   width: 105px;
   text-align: center;
 `
 
 const AboutContents = styled.div`
-  color: ${colours.white};
+  color: ${colours.primary};
   padding: 25% 15% 20%;
 
   @media only screen and (min-width: ${breakpoints.tabletSmall}){
@@ -91,7 +91,7 @@ const BioParagraph = styled.p`
 
 const BioLink = styled(Link)`
   text-decoration: none;
-  color: ${colours.white};
+  color: ${colours.primary};
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

@@ -87,27 +87,27 @@ collections:
                       [
                         {
                           label: Concert Name,
-                          name: concertName,
+                          name: name,
                           widget: string,
                         },
                         {
                           label: Concert Date,
-                          name: concertDate,
+                          name: date,
                           widget: datetime,
                           default: "",
                           date_format: "DD.MM",
-                          time_format: "HH:mm",
+                          time_format: "hh:mm",
                           format: "LLL",
                           picker_utc: false,
                         },
                         {
                           label: Concert Venue,
-                          name: concertVenue,
+                          name: venue,
                           widget: string,
                         },
                         {
                           label: Concert Location,
-                          name: concertLocation,
+                          name: location,
                           widget: string,
                         },
                       ],

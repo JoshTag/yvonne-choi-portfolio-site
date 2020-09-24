@@ -5,7 +5,7 @@ import { colours, breakpoints } from "../styles/master"
 
 const TestimonialsSection = styled.section`
   position: relative;
-  background-color: ${colours.white};
+  background-color: ${colours.primary};
   height: 600px;
 
   @media only screen and (min-width: ${breakpoints.tablet}) {
@@ -43,7 +43,7 @@ const TitleContainer = styled.div`
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: ${colours.white};
+  background-color: ${colours.primary};
   padding: 0 0.5rem;
   z-index: 10;
 

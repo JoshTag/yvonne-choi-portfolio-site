@@ -9,13 +9,13 @@ import { colours, breakpoints } from "./../styles/master"
 
 const BioSection = styled.section`
   position: relative;
-  background: ${colours.white};
-  padding: 5rem 4rem;
+  background: ${colours.primary};
+  padding: 5rem 2rem;
 
-  @media only screen and (min-width: ${breakpoints.tablet}){
+  @media only screen and (min-width: ${breakpoints.tablet}) {
     padding: 4rem 5rem 2rem;
   }
-  @media only screen and (min-width: ${breakpoints.desktop}){
+  @media only screen and (min-width: ${breakpoints.desktop}) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,10 +26,10 @@ const BioContainer = styled.div`
   border: 1px solid ${colours.brown};
   padding: 4rem 1.5rem 2rem;
 
-  @media only screen and (min-width: ${breakpoints.tablet}){
+  @media only screen and (min-width: ${breakpoints.tablet}) {
     padding: 4rem 3.5rem 2rem;
   }
-  @media only screen and (min-width: ${breakpoints.desktop}){
+  @media only screen and (min-width: ${breakpoints.desktop}) {
     padding: 4rem 6rem 2rem;
     max-width: 800px;
   }
@@ -42,11 +42,11 @@ const BioTitle = styled.div`
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: ${colours.white};
+  background-color: ${colours.primary};
   padding: 0 0.5rem;
   z-index: 10;
 
-  @media only screen and (min-width: ${breakpoints.tablet}){
+  @media only screen and (min-width: ${breakpoints.tablet}) {
     top: 2.1rem;
   }
 
