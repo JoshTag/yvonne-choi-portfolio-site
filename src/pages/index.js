@@ -5,22 +5,31 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Testimonials from "../components/testimonials"
 import MiniBio from "../components/miniBio"
+import UpcomingConcerts from "../components/upcomingConcerts.js"
 
-export const IndexPageTemplate = ({ heading, subheading, testimonials, about }) => {
+export const IndexPageTemplate = ({
+  heading,
+  subheading,
+  testimonials,
+  about,
+}) => {
   return (
     <>
-      <Hero 
-        heading={heading}
-        subheading={subheading}
-      />
-      <Testimonials testimonials={testimonials}/>
+      <Hero heading={heading} subheading={subheading} />
+      <Testimonials testimonials={testimonials} />
       <MiniBio about={about} />
+      <UpcomingConcerts />
     </>
   )
 }
 
 const IndexPage = ({ data }) => {
-  const { heading, subheading, testimonials, about } = data.markdownRemark.frontmatter
+  const {
+    heading,
+    subheading,
+    testimonials,
+    about,
+  } = data.markdownRemark.frontmatter
 
   return (
     <Layout>
@@ -36,7 +45,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: {title: {eq: "Landing"}}) {
+    markdownRemark(frontmatter: { title: { eq: "Landing" } }) {
       frontmatter {
         heading
         subheading

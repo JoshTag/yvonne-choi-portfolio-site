@@ -12,7 +12,7 @@ const MiniBioContainer = styled.section`
       content: " ";
       position: absolute;
       width: 100%;
-      height: 10rem;
+      height: 5rem;
       background-color: ${colours.black};
     }
   }

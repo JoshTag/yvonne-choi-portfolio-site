@@ -43,7 +43,7 @@ const Card = styled.div`
   }
 `
 
-function ConcertCard({ concertInfo }) {
+const ConcertCard = ({ concertInfo }) => {
   console.log(new Date(concertInfo.date).getDate())
   return (
     <Card>

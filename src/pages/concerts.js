@@ -53,6 +53,7 @@ const ConcertTitle = styled.div`
     padding: 0.5rem 2rem;
   }
 `
+
 const ConcertMonth = styled.div`
   padding-top: 2rem;
   width: 100%;
@@ -88,7 +89,6 @@ const ConcertMonth = styled.div`
 `
 
 export const ConcertPageTemplate = ({ concerts }) => {
-  console.log(concerts)
   return (
     <ConcertSection>
       <ConcertContainer>
@@ -103,7 +103,7 @@ export const ConcertPageTemplate = ({ concerts }) => {
               <h2>{item.month}</h2>
               <div>
                 {item.concert.map((v, i) => {
-                  return <ConcertCard concertInfo={v} />
+                  return <ConcertCard key={i} concertInfo={v} />
                 })}
               </div>
             </ConcertMonth>

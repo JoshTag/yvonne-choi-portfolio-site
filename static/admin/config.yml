@@ -61,6 +61,27 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/content/recordings/index.md"
+        label: "Recordings Page"
+        name: "recordings"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "recordings-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { 
+              label: "Recodings", 
+              name: "recordings", 
+              widget: list,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Iframe", name: "iframe", widget: "string" },
+                ]
+            }
       - file: "src/content/concerts/index.md"
         label: "Concerts Page"
         name: "concerts"
