@@ -1,4 +1,5 @@
 ---
+templateKey: 'index-page'
 title: Landing
 heading: Yvonne Choi
 subheading: Hon. B.Mus, M.Mus, ATCL

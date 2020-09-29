@@ -135,3 +135,32 @@ collections:
                   },
                 ],
             }
+      - file: "src/content/contact/index.md"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { 
+              label: Services, 
+              name: services, 
+              widget: list, 
+              fields:
+                [
+                  { label: "Service", name: "service", widget: "string" },
+                ]
+            }
+          - { 
+              label: Specialties, 
+              name: specialties, 
+              widget: list, 
+              fields:
+                [
+                  { label: "Specialty", name: "specialty", widget: "string" },
+                ]
+            }
