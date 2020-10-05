@@ -14,12 +14,13 @@ const BioSection = styled.section`
   padding: 8rem 2rem;
 
   @media only screen and (min-width: ${breakpoints.tablet}) {
-    padding: 4rem 5rem 2rem;
+    padding: 8rem 5rem 2rem;
   }
   @media only screen and (min-width: ${breakpoints.desktop}) {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 10rem;
   }
 `
 

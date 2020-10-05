@@ -10,6 +10,10 @@ const RecordingsSection = styled.section`
   min-height: 100vh;
   background: ${colours.primary};
   padding: 8rem 0 5rem;
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    padding-top: 10rem;
+  }
 `
 
 const RecordingsContainer = styled.div`

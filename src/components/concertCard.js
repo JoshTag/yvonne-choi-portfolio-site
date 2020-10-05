@@ -48,6 +48,9 @@ const ConcertCard = ({ concertInfo }) => {
   return (
     <Card>
       <h3>{concertInfo.name}</h3>
+      {/* 
+        Format date
+       */}
       <div>{concertInfo.date}</div>
       <div>{concertInfo.venue}</div>
       <div>{concertInfo.location}</div>

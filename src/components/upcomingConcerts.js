@@ -94,7 +94,7 @@ const DateContainer = styled.div`
   }
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-right: 2rem;
   }
 `

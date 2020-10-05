@@ -9,6 +9,7 @@ const Header = styled.header`
   height: 60px;
   z-index: 10;
   display: none;
+  background: ${({ page }) => page === "Landing" ? "transparent" : colours.black};
 
   @media only screen and (min-width: ${breakpoints.tabletSmall}) {
     display: -ms-flexbox;
@@ -54,9 +55,9 @@ const NavList = styled.ul`
   }
 `
 
-const Navigation = () => {
+const Navigation = ({ page }) => {
   return (
-    <Header>
+    <Header page={page}>
       <Nav>
         <div>yvonne</div>
         <NavList>

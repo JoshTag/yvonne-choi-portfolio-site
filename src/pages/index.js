@@ -29,10 +29,11 @@ const IndexPage = ({ data }) => {
     subheading,
     testimonials,
     about,
+    title
   } = data.markdownRemark.frontmatter
 
   return (
-    <Layout>
+    <Layout page={title}>
       <IndexPageTemplate
         heading={heading}
         subheading={subheading}
@@ -50,6 +51,7 @@ export const query = graphql`
         heading
         subheading
         about
+        title
         testimonials {
           author
           position

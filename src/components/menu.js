@@ -61,19 +61,19 @@ const Navigation = () => {
   return (
     <Menu right styles={styles}>
       <div>
-        <MenuItem className="menu-item" href="/">
+        <MenuItem className="menu-item" to="/">
           Home
         </MenuItem>
-        <MenuItem className="menu-item" href="/biography">
+        <MenuItem className="menu-item" to="/biography/">
           Biography
         </MenuItem>
-        <MenuItem className="menu-item" href="/recordings">
+        <MenuItem className="menu-item" to="/recordings/">
           Recordings
         </MenuItem>
-        <MenuItem className="menu-item" href="/concerts">
+        <MenuItem className="menu-item" to="/concerts/">
           Concerts
         </MenuItem>
-        <MenuItem className="menu-item" href="/contact">
+        <MenuItem className="menu-item" to="/contact/">
           Contact
         </MenuItem>
       </div>
