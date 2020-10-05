@@ -3,13 +3,14 @@ import { graphql } from "gatsby"
 
 import Layout from "./../components/layout"
 import ContactForm from "./../components/contactForm"
+import Square from "./../components/square"
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
 
 const ContactSection = styled.section`
   min-height: 100vh;
   background: ${colours.primary};
-  padding: 5rem 0 5rem;
+  padding: 8rem 0 5rem;
 `
 
 const ContactContainer = styled.div`
@@ -59,9 +60,27 @@ const ContactContent = styled.div`
   flex-direction: column-reverse;
 `
 
+const ListsContainer = styled.div`
+  @media only screen and (min-width: ${breakpoints.tabletLarge}) {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0 3rem;
+
+    & > div {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    width: 700px;
+    margin: 0 auto;
+  }
+`
+
 export const ContactHeaders = styled.h2`
   font-size: 1.2rem;
-  padding: 1rem 0 .5rem;
+  padding: 1rem 0 0.5rem;
+  font-weight: 600;
 `
 
 const List = styled.ul`
@@ -69,7 +88,7 @@ const List = styled.ul`
   padding: 0;
 
   & li {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `
 
@@ -82,22 +101,28 @@ export const ContactPageTemplate = ({ specialties, services }) => {
             <h1>Contact</h1>
           </div>
         </ContactTitle>
+        <Square top="-18px" left="-18px" />
+        <Square top="-18px" right="-18px" />
         <ContactContent>
           <ContactForm />
-          <div>
-            <ContactHeaders>Services</ContactHeaders>
-            <List>
-              {services.map(i => (
-                <li key={i.service}>{i.service}</li>
-              ))}
-            </List>
-            <ContactHeaders>Areas of Specialty</ContactHeaders>
-            <List>
-              {specialties.map(i => (
-                <li key={i.specialty}>{i.specialty}</li>
-              ))}
-            </List>
-          </div>
+          <ListsContainer>
+            <div>
+              <ContactHeaders>Services</ContactHeaders>
+              <List>
+                {services.map(i => (
+                  <li key={i.service}>{i.service}</li>
+                ))}
+              </List>
+            </div>
+            <div>
+              <ContactHeaders>Areas of Specialty</ContactHeaders>
+              <List>
+                {specialties.map(i => (
+                  <li key={i.specialty}>{i.specialty}</li>
+                ))}
+              </List>
+            </div>
+          </ListsContainer>
         </ContactContent>
       </ContactContainer>
     </ContactSection>

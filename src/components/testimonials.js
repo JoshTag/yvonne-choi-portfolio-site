@@ -1,16 +1,14 @@
 import React from "react"
 import Carousel from "./carousel"
+import Square from "./square"
 import styled from "styled-components"
 import { colours, breakpoints } from "../styles/master"
 
 const TestimonialsSection = styled.section`
   position: relative;
   background-color: ${colours.primary};
-  height: 600px;
+  height: 650px;
 
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    height: 650px;
-  }
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 760px;
   }
@@ -24,7 +22,7 @@ const TestimonialsBoarder = styled.div`
   height: 85%;
   border: solid ${colours.brown} 1px;
 
-  @media only screen and (min-width: ${breakpoints.tabletSmall}){
+  @media only screen and (min-width: ${breakpoints.tabletSmall}) {
     top: 8%;
     left: 6%;
     width: 88%;
@@ -77,6 +75,10 @@ const Testimonials = ({ testimonials }) => {
         </TitleBorder>
       </TitleContainer>
       <TestimonialsBoarder>
+        <Square top="-18px" left="-18px" />
+        <Square top="-18px" right="-18px" />
+        <Square bottom="-18px" left="-18px" />
+        <Square bottom="-18px" right="-18px" />
         <Carousel testimonials={testimonials} />
       </TestimonialsBoarder>
     </TestimonialsSection>

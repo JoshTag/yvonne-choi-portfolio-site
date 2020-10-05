@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "./../components/layout"
 import Content, { HTMLContent } from "./../components/bioContent"
+import Square from "./../components/square"
 
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
@@ -10,7 +11,7 @@ import { colours, breakpoints } from "./../styles/master"
 const BioSection = styled.section`
   position: relative;
   background: ${colours.primary};
-  padding: 5rem 2rem;
+  padding: 8rem 2rem;
 
   @media only screen and (min-width: ${breakpoints.tablet}) {
     padding: 4rem 5rem 2rem;
@@ -23,6 +24,7 @@ const BioSection = styled.section`
 `
 
 const BioContainer = styled.div`
+  position: relative;
   border: 1px solid ${colours.brown};
   padding: 4rem 1.5rem 2rem;
 
@@ -37,7 +39,7 @@ const BioContainer = styled.div`
 
 const BioTitle = styled.div`
   position: absolute;
-  top: 3rem;
+  top: -2.1rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -45,10 +47,6 @@ const BioTitle = styled.div`
   background-color: ${colours.primary};
   padding: 0 0.5rem;
   z-index: 10;
-
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    top: 2.1rem;
-  }
 
   & > div {
     border: 2px ${colours.brown} solid;
@@ -75,6 +73,10 @@ export const BiographyPageTemplate = ({ contentComponent, biography }) => {
           </div>
         </BioTitle>
         <PageContent content={biography} />
+        <Square top="-18px" left="-18px" />
+        <Square top="-18px" right="-18px" />
+        <Square bottom="-18px" left="-18px" />
+        <Square bottom="-18px" right="-18px" />
       </BioContainer>
     </BioSection>
   )
@@ -95,7 +97,7 @@ const Biography = ({ data }) => {
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: { title: { eq: "Biography" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "biography-page" } }) {
       html
     }
   }

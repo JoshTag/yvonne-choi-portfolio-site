@@ -2,13 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "./../components/layout"
+import Square from "./../components/square"
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
 
 const RecordingsSection = styled.section`
   min-height: 100vh;
   background: ${colours.primary};
-  padding: 5rem 0 5rem;
+  padding: 8rem 0 5rem;
 `
 
 const RecordingsContainer = styled.div`
@@ -59,6 +60,7 @@ const RecordingCard = styled.div`
   & > h3 {
     font-size: 1.5rem;
     padding-bottom: 1rem;
+    font-weight: 600;
 
     @media only screen and (min-width: ${breakpoints.desktop}){
       font-size: 2rem;
@@ -70,6 +72,8 @@ export const RecordingsPageTemplate = ({ recordings }) => {
   return (
     <RecordingsSection>
       <RecordingsContainer>
+        <Square top="-18px" left="-18px" />
+        <Square top="-18px" right="-18px" />
         <RecordingsTitle>
         <div>
           <h1>Recordings</h1>
@@ -100,7 +104,7 @@ const Recordings = ({ data }) => {
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: { title: { eq: "Recordings" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "recordings-page" } }) {
       frontmatter {
         recordings {
           iframe

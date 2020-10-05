@@ -28,10 +28,10 @@ const HeroBorder = styled.div`
   border: solid #fff 1px;
 
   @media only screen and (min-width: ${breakpoints.tabletSmall}){
-    top: 8%;
+    top: 10%;
     left: 6%;
     width: 88%;
-    height: 84%;
+    height: 80%;
   }
 `
 

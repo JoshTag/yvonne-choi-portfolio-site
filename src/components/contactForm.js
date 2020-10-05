@@ -1,8 +1,15 @@
 import React from "react"
 
 import styled from "styled-components"
-import { colours } from "./../styles/master"
+import { colours, breakpoints } from "./../styles/master"
 import { ContactHeaders } from "./../pages/contact"
+
+const ContactContainer = styled.div`
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    width: 700px;
+    margin: 0 auto;
+  }
+`
 
 const Label = styled.label`
   display: flex;
@@ -16,6 +23,8 @@ const Input = styled.input`
   background: ${colours.white};
   padding: 0 0.5rem;
   margin-top: 0.5rem;
+  font-family: "Playfair Display", serif;
+  font-size: 0.8rem;
 `
 
 const TextArea = styled.textarea`
@@ -25,6 +34,8 @@ const TextArea = styled.textarea`
   padding: 0.5rem;
   margin-top: 0.5rem;
   resize: vertical;
+  font-family: "Playfair Display", serif;
+  font-size: 0.8rem;
 `
 
 const SubmitButton = styled.button`
@@ -39,7 +50,7 @@ const SubmitButton = styled.button`
 
 const ContactForm = () => {
   return (
-    <div>
+    <ContactContainer>
       <ContactHeaders>Get In Touch</ContactHeaders>
       <form name="contact" method="POST" data-netlify="true" id="contact-form">
         <input type="hidden" name="form-name" value="contact" />
@@ -77,7 +88,7 @@ const ContactForm = () => {
         </Label>
         <SubmitButton type="submit">Submit</SubmitButton>
       </form>
-    </div>
+    </ContactContainer>
   )
 }
 

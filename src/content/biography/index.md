@@ -1,4 +1,5 @@
 ---
+templateKey: 'biography-page'
 title: Biography
 ---
 An accomplished solo and collaborative pianist, Yvonne Choi has had tremendous success working with both singers and instrumentalists in the Greater Toronto Area and Kitchener/Waterloo. Winner of the WLU Concerto Competition, the Ken Murray Concerto Competition, and the Penderecki String Quartet Prize, her aptitude for solo and collaborative performance is evident.

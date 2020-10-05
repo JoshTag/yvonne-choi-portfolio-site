@@ -10,3 +10,9 @@ body {
   font-family: 'Playfair Display', serif;
   color: #3A2615;
 }
+
+.burger-menu {
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+}

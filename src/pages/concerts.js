@@ -3,13 +3,14 @@ import { graphql } from "gatsby"
 
 import Layout from "./../components/layout"
 import ConcertCard from "./../components/concertCard"
+import Square from "./../components/square"
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
 
 const ConcertSection = styled.section`
   min-height: 100vh;
   background: ${colours.primary};
-  padding: 5rem 0 5rem;
+  padding: 8rem 0 5rem;
 `
 
 const ConcertContainer = styled.div`
@@ -97,6 +98,8 @@ export const ConcertPageTemplate = ({ concerts }) => {
             <h1>Concerts</h1>
           </div>
         </ConcertTitle>
+        <Square top="-18px" left="-18px" />
+        <Square top="-18px" right="-18px" />
         {concerts.map(item => {
           return (
             <ConcertMonth key={item.month}>
@@ -128,7 +131,7 @@ export default Concerts
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: { title: { eq: "Concerts" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "concerts-page" } }) {
       frontmatter {
         title
         concerts {

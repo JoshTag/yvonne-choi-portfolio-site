@@ -1,4 +1,5 @@
 ---
+templateKey: 'recordings-page'
 title: Recordings
 recordings:
   - title: Tidings of Choi

@@ -14,13 +14,12 @@ const CarouselContainer = styled.div`
 
 const QuoteContainer = styled.div`
   padding: 1rem;
-  height: 400px;
+  height: 450px;
   display: grid !important;
   place-items: center;
 
   @media only screen and (min-width: ${breakpoints.tablet}) {
     padding: 3rem 1rem;
-    height: 450px;
   }
   @media only screen and (min-width: ${breakpoints.desktop}) {
     padding: 3rem 3rem;

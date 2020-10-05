@@ -1,6 +1,8 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
+import Square from "./square"
+
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
 import { getDay, getOrdinal, getMonth, upcomingConcertDates } from "./../utils/"
@@ -20,8 +22,8 @@ const UpcomingConcertsSection = styled.section`
 
 const UpcomingConcertContainer = styled.div`
   position: relative;
-  width: 90%;
-  margin: 0 5%;
+  width: 88%;
+  margin: 0 6%;
   padding-top: 4rem;
   border-top: 1px solid ${colours.brown};
 `
@@ -61,6 +63,11 @@ const Card = styled.div`
   display: flex;
   padding: 1rem;
   margin-bottom: 1rem;
+  height: 100px;
+
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    height: 75px;
+  }
 
   @media only screen and (min-width: ${breakpoints.tabletLarge}) {
     max-width: 750px;
@@ -69,7 +76,7 @@ const Card = styled.div`
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
     padding: 2rem;
-    max-width: 1024px;
+    max-width: 850px;
   }
 `
 
@@ -124,14 +131,13 @@ const Contents = styled.div`
     }
 
     @media only screen and (min-width: ${breakpoints.tabletLarge}) {
-      width: 250px;
+      width: 275px;
       font-size: 0.9rem;
     }
 
     @media only screen and (min-width: ${breakpoints.desktop}) {
       font-size: 1.1rem;
-      width: 375px;
-      padding-right: 4rem;
+      width: 330px;
     }
   }
 
@@ -205,6 +211,8 @@ const UpcomingConcerts = ({ data }) => {
             </Card>
           )
         })}
+        <Square top="-18px" left="-17px"/>
+        <Square top="-18px" right="-17px"/>
       </UpcomingConcertContainer>
       <ConcertLink href="/concerts">View All Concerts</ConcertLink>
     </UpcomingConcertsSection>

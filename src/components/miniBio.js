@@ -1,13 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { colours, breakpoints } from "../styles/master"
+import Square from "./square"
 import { Link } from "gatsby"
 
 const MiniBioContainer = styled.section`
   position: relative;
   background-color: ${colours.black};
 
-  @media only screen and (min-width: ${breakpoints.desktop}){
+  @media only screen and (min-width: ${breakpoints.desktop}) {
     :after {
       content: " ";
       position: absolute;
@@ -26,8 +27,8 @@ const MiniBioBoarder = styled.div`
   height: 85%;
   border: solid ${colours.primary} 1px;
 
-  @media only screen and (min-width: ${breakpoints.tablet}){
-    top: 20%;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    top: 15%;
     left: 6%;
     width: 88%;
     height: 75%;
@@ -44,8 +45,11 @@ const TitleContainer = styled.div`
   background-color: ${colours.black};
   padding: 0 0.5rem;
   z-index: 10;
-  @media only screen and (min-width: ${breakpoints.tablet}){
+  @media only screen and (min-width: ${breakpoints.tablet}) {
     top: 12%;
+  }
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    top: 10%;
   }
 `
 
@@ -68,22 +72,22 @@ const AboutContents = styled.div`
   color: ${colours.primary};
   padding: 25% 15% 20%;
 
-  @media only screen and (min-width: ${breakpoints.tabletSmall}){
-    padding: 20% 10% 10%;
+  @media only screen and (min-width: ${breakpoints.tabletSmall}) {
+    padding: 11rem 6rem 8rem;
   }
-  @media only screen and (min-width: ${breakpoints.desktop}){
-    padding: 9rem 12rem 8rem;
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    padding: 10rem 12rem 8rem;
   }
 `
 
 const BioParagraph = styled.p`
   font-size: 0.75rem;
-  line-height: 2;
+  line-height: 2.5;
   margin-bottom: 1.5rem;
 
-  @media only screen and (min-width: ${breakpoints.desktop}){
+  @media only screen and (min-width: ${breakpoints.desktop}) {
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 2;
     max-width: 1024px;
     margin: 0 auto 2rem;
   }
@@ -116,7 +120,12 @@ const MiniBio = ({ about }) => {
         <BioParagraph>{about}</BioParagraph>
         <BioLink to="/biography/">Read Full Bio</BioLink>
       </AboutContents>
-      <MiniBioBoarder />
+      <MiniBioBoarder>
+        <Square colourBackground={colours.black} colourBorder={colours.primary} top="-18px" left="-18px" />
+        <Square colourBackground={colours.black} colourBorder={colours.primary} top="-18px" right="-18px" />
+        <Square colourBackground={colours.black} colourBorder={colours.primary} bottom="-18px" left="-18px" />
+        <Square colourBackground={colours.black} colourBorder={colours.primary} bottom="-18px" right="-18px" />
+      </MiniBioBoarder>
     </MiniBioContainer>
   )
 }

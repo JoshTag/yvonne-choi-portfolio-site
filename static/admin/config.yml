@@ -3,17 +3,16 @@ backend:
   branch: master
 
 # Uncomment for CMS testing
-# local_backend: true
+local_backend: true
 
-# site_url: https://xenodochial-noyce-a4a307.netlify.app
+site_url: https://xenodochial-noyce-a4a307.netlify.app
 
-# display_url: https://xenodochial-noyce-a4a307.netlify.app
+display_url: https://xenodochial-noyce-a4a307.netlify.app
 
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img
-
 
 collections:
   - name: "pages"
@@ -72,15 +71,15 @@ collections:
               default: "recordings-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { 
-              label: "Recodings", 
-              name: "recordings", 
+          - {
+              label: "Recodings",
+              name: "recordings",
               widget: list,
               fields:
                 [
                   { label: "Title", name: "title", widget: "string" },
                   { label: "Iframe", name: "iframe", widget: "string" },
-                ]
+                ],
             }
       - file: "src/content/concerts/index.md"
         label: "Concerts Page"
@@ -106,11 +105,7 @@ collections:
                     widget: list,
                     fields:
                       [
-                        {
-                          label: Concert Name,
-                          name: name,
-                          widget: string,
-                        },
+                        { label: Concert Name, name: name, widget: string },
                         {
                           label: Concert Date,
                           name: date,
@@ -121,11 +116,7 @@ collections:
                           format: "LLL",
                           picker_utc: false,
                         },
-                        {
-                          label: Concert Venue,
-                          name: venue,
-                          widget: string,
-                        },
+                        { label: Concert Venue, name: venue, widget: string },
                         {
                           label: Concert Location,
                           name: location,
@@ -146,21 +137,16 @@ collections:
               default: "contact-page",
             }
           - { label: Title, name: title, widget: string }
-          - { 
-              label: Services, 
-              name: services, 
-              widget: list, 
-              fields:
-                [
-                  { label: "Service", name: "service", widget: "string" },
-                ]
+          - {
+              label: Services,
+              name: services,
+              widget: list,
+              fields: [{ label: "Service", name: "service", widget: "string" }],
             }
-          - { 
-              label: Specialties, 
-              name: specialties, 
-              widget: list, 
+          - {
+              label: Specialties,
+              name: specialties,
+              widget: list,
               fields:
-                [
-                  { label: "Specialty", name: "specialty", widget: "string" },
-                ]
+                [{ label: "Specialty", name: "specialty", widget: "string" }],
             }
