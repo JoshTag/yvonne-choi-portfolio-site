@@ -47,7 +47,7 @@ const ConcertCard = ({ concertInfo }) => {
   console.log(new Date(concertInfo.date).getDate())
   return (
     <Card>
-      <h3>{concertInfo.name}</h3>
+      <h4>{concertInfo.name}</h4>
       {/* 
         Format date
        */}

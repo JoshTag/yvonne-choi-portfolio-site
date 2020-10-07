@@ -9,7 +9,8 @@ const Header = styled.header`
   height: 60px;
   z-index: 10;
   display: none;
-  background: ${({ page }) => page === "Landing" ? "transparent" : colours.black};
+  background: ${({ page }) =>
+    page === "Landing" ? "transparent" : colours.black};
 
   @media only screen and (min-width: ${breakpoints.tabletSmall}) {
     display: -ms-flexbox;
@@ -33,6 +34,11 @@ const Nav = styled.nav`
   width: 88%;
   padding: 0 6%;
   color: ${colours.white};
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
 `
 
 const NavList = styled.ul`

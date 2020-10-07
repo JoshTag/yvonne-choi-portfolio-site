@@ -3,9 +3,11 @@ import { graphql } from "gatsby"
 
 import Layout from "./../components/layout"
 import ConcertCard from "./../components/concertCard"
+import UpcomingConcertCard  from "./../components/upcomingConcertCard"
 import Square from "./../components/square"
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
+import { getDay, getOrdinal, getMonth, upcomingConcertDates } from "./../utils/"
 
 const ConcertSection = styled.section`
   min-height: 100vh;
@@ -24,8 +26,11 @@ const ConcertContainer = styled.div`
   margin: 0 auto;
   padding-top: 3rem;
 
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    width: 650px;
+  }
   @media only screen and (min-width: ${breakpoints.tabletLarge}) {
-    width: 600px;
+    width: 700px;
   }
   @media only screen and (min-width: ${breakpoints.desktop}) {
     width: 900px;
@@ -63,13 +68,13 @@ const ConcertMonth = styled.div`
   padding-top: 2rem;
   width: 100%;
 
-  & h2 {
+  & > h3 {
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding-bottom: 1.5rem;
 
     @media only screen and (min-width: ${breakpoints.desktop}) {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -80,11 +85,14 @@ const ConcertMonth = styled.div`
       justify-content: space-between;
       align-content: space-between;
       row-gap: 1rem;
+      width: 600px;
+      margin: 0 auto;
     }
 
     @media only screen and (min-width: ${breakpoints.desktop}) {
       grid-template-columns: 280px 280px 280px;
       row-gap: 1.5rem;
+      width: auto;
     }
 
     @media only screen and (min-width: ${breakpoints.desktopLarge}) {
@@ -92,6 +100,28 @@ const ConcertMonth = styled.div`
     }
   }
 `
+
+const SubHeader = styled. h2`
+    font-weight: 400;
+    font-size: 1.25rem;
+    padding-bottom: 1.5rem;
+
+    @media only screen and (min-width: ${breakpoints.desktop}) {
+      font-size: 1.5rem;
+    }
+`
+
+const SubHeaderNoPadding = styled. h2`
+    font-weight: 400;
+    font-size: 1.25rem;
+    padding-top: 1.5rem;
+
+    @media only screen and (min-width: ${breakpoints.desktop}) {
+      font-size: 1.5rem;
+    }
+`
+
+
 
 export const ConcertPageTemplate = ({ concerts }) => {
   return (
@@ -104,10 +134,17 @@ export const ConcertPageTemplate = ({ concerts }) => {
         </ConcertTitle>
         <Square top="-18px" left="-18px" />
         <Square top="-18px" right="-18px" />
+        <SubHeader>Upcoming Concerts</SubHeader>
+        {upcomingConcertDates(concerts).map((concert, i) => {
+          return (
+            <UpcomingConcertCard concert={concert} index={i}  />
+          )
+        })}
+        <SubHeaderNoPadding>All Concerts</SubHeaderNoPadding>
         {concerts.map(item => {
           return (
             <ConcertMonth key={item.month}>
-              <h2>{item.month}</h2>
+              <h3>{item.month}</h3>
               <div>
                 {item.concert.map((v, i) => {
                   return <ConcertCard key={i} concertInfo={v} />

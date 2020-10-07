@@ -3,13 +3,13 @@ backend:
   branch: master
 
 # Uncomment for CMS testing
-local_backend: true
+# local_backend: true
 
-site_url: https://xenodochial-noyce-a4a307.netlify.app
+# site_url: https://xenodochial-noyce-a4a307.netlify.app
 
-display_url: https://xenodochial-noyce-a4a307.netlify.app
+# display_url: https://xenodochial-noyce-a4a307.netlify.app
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img

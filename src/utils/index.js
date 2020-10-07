@@ -12,7 +12,6 @@ export const upcomingConcertDates = concerts => {
     return dateA - dateB
   })
 
-  // Returns first 3 concerts from current date
   return sortedDates
     .filter(date => {
       return new Date(date.date) > new Date()

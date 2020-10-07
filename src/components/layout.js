@@ -10,9 +10,7 @@ const Layout = ({ page, children }) => {
         <Menu />
       </div>
       <Navigation page={page} />
-      {/* <header>Header</header> */}
       <main>{children}</main>
-      {/* <footer>Footer</footer> */}
     </div>
   )
 }
