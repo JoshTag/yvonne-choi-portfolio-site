@@ -1,13 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    keywords: ["piano", "pianist"],
+    title: `Yvonne Choi`,
+    description: `Portfolio site for Yvonne Choi - Pianist`,
+    keywords: [
+      "Piano",
+      "Pianist",
+      "Music",
+      "Classical",
+      "Music Directing",
+      "Solo Piano Performance",
+      "Collaborative Piano Performance",
+      "Music Education",
+      "Music Coaching",
+      "Choral Music",
+      "Musical Theatre",
+      "Contemporary Pop",
+    ],
   },
   plugins: [
     {
@@ -37,6 +45,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

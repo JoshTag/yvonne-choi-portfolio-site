@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
-import { getDay, getOrdinal, getMonth } from "./../utils/"
+import { getDay, getOrdinal, getMonth, formatTime } from "./../utils/"
 
 const Card = styled.div`
   background: ${colours.white};
@@ -120,7 +120,11 @@ const UpcomingConcertCard = ({ concert, index }) => {
       <Contents>
         <div>
           <h3>{concert.name}</h3>
-          <div>{concert.date}</div>
+          <div>
+            {getMonth(concert.date, "long")} {getDay(concert.date)}
+            <Ordinal>{getOrdinal(concert.date)}</Ordinal> @{" "}
+            {formatTime(concert.date)}
+          </div>
         </div>
         <div>
           <div>{concert.venue}</div>

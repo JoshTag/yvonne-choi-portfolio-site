@@ -3,6 +3,7 @@ templateKey: index-page
 title: Landing
 heading: Yvonne Choi
 subheading: Hon. B.Mus, M.Mus, ATCL
+image: /img/hero-img.png
 testimonials:
   - quote: Music is at the very heart of the life of spiritual gatherings. Glen
       Abbey United Church is deeply blessed to have Yvonne Choi as its Direct of

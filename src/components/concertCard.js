@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
+import { getDay, getOrdinal, getMonth, formatTime } from "./../utils/"
 
 const Card = styled.div`
   background: ${colours.white};
@@ -43,15 +44,23 @@ const Card = styled.div`
   }
 `
 
+const Ordinal = styled.sup`
+  font-size: 0.5rem;
+
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 0.8rem;
+  }
+`
+
 const ConcertCard = ({ concertInfo }) => {
-  console.log(new Date(concertInfo.date).getDate())
   return (
     <Card>
       <h4>{concertInfo.name}</h4>
-      {/* 
-        Format date
-       */}
-      <div>{concertInfo.date}</div>
+      <div>
+        {getMonth(concertInfo.date, "long")} {getDay(concertInfo.date)}
+        <Ordinal>{getOrdinal(concertInfo.date)}</Ordinal> @{" "}
+        {formatTime(concertInfo.date)}
+      </div>
       <div>{concertInfo.venue}</div>
       <div>{concertInfo.location}</div>
     </Card>

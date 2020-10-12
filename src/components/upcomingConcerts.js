@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from "gatsby"
 import Square from "./square"
 import UpcomingConcertCard from "./upcomingConcertCard"
 
-
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
 import { upcomingConcertDates } from "./../utils/"
@@ -88,11 +87,14 @@ const UpcomingConcerts = ({ data }) => {
         </TitleContainer>
         {upcomingConcertDates(concerts).map((concert, i) => {
           return (
-            <UpcomingConcertCard concert={concert} index={i} />
+            <UpcomingConcertCard
+              concert={concert}
+              key={`${i}-${concert.name}`}
+            />
           )
         })}
-        <Square top="-18px" left="-17px"/>
-        <Square top="-18px" right="-17px"/>
+        <Square top="-18px" left="-17px" />
+        <Square top="-18px" right="-17px" />
       </UpcomingConcertContainer>
       <ConcertLink href="/concerts">View All Concerts</ConcertLink>
     </UpcomingConcertsSection>

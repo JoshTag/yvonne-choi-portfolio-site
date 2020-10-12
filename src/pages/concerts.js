@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 
 import Layout from "./../components/layout"
 import ConcertCard from "./../components/concertCard"
-import UpcomingConcertCard  from "./../components/upcomingConcertCard"
+import UpcomingConcertCard from "./../components/upcomingConcertCard"
 import Square from "./../components/square"
 import styled from "styled-components"
 import { colours, breakpoints } from "./../styles/master"
-import { getDay, getOrdinal, getMonth, upcomingConcertDates } from "./../utils/"
+import { upcomingConcertDates } from "./../utils/"
 
 const ConcertSection = styled.section`
   min-height: 100vh;
@@ -101,27 +101,25 @@ const ConcertMonth = styled.div`
   }
 `
 
-const SubHeader = styled. h2`
-    font-weight: 400;
-    font-size: 1.25rem;
-    padding-bottom: 1.5rem;
+const SubHeader = styled.h2`
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding-bottom: 1.5rem;
 
-    @media only screen and (min-width: ${breakpoints.desktop}) {
-      font-size: 1.5rem;
-    }
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 1.5rem;
+  }
 `
 
-const SubHeaderNoPadding = styled. h2`
-    font-weight: 400;
-    font-size: 1.25rem;
-    padding-top: 1.5rem;
+const SubHeaderNoPadding = styled.h2`
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding-top: 1.5rem;
 
-    @media only screen and (min-width: ${breakpoints.desktop}) {
-      font-size: 1.5rem;
-    }
+  @media only screen and (min-width: ${breakpoints.desktop}) {
+    font-size: 1.5rem;
+  }
 `
-
-
 
 export const ConcertPageTemplate = ({ concerts }) => {
   return (
@@ -136,9 +134,7 @@ export const ConcertPageTemplate = ({ concerts }) => {
         <Square top="-18px" right="-18px" />
         <SubHeader>Upcoming Concerts</SubHeader>
         {upcomingConcertDates(concerts).map((concert, i) => {
-          return (
-            <UpcomingConcertCard concert={concert} index={i}  />
-          )
+          return <UpcomingConcertCard concert={concert} index={i} />
         })}
         <SubHeaderNoPadding>All Concerts</SubHeaderNoPadding>
         {concerts.map(item => {
