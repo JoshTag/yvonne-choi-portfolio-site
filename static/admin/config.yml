@@ -3,11 +3,11 @@ backend:
   branch: master
 
 # Uncomment for CMS testing
-local_backend: true
+# local_backend: true
 
-site_url: https://yvonne-choi-portfolio.netlify.app
+# site_url: https://yvonne-choi-portfolio.netlify.app
 
-display_url: https://yvonne-choi-portfolio.netlify.app
+# display_url: https://yvonne-choi-portfolio.netlify.app
 
 # publish_mode: editorial_workflow
 
