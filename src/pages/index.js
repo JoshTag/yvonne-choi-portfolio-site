@@ -12,13 +12,14 @@ export const IndexPageTemplate = ({
   subheading,
   testimonials,
   about,
+  concerts,
 }) => {
   return (
     <>
       <Hero heading={heading} subheading={subheading} />
       <Testimonials testimonials={testimonials} />
       <MiniBio about={about} />
-      <UpcomingConcerts />
+      {concerts && <UpcomingConcerts concerts={concerts}/>}
     </>
   )
 }
@@ -29,8 +30,8 @@ const IndexPage = ({ data }) => {
     subheading,
     testimonials,
     about,
-    title
-  } = data.markdownRemark.frontmatter
+    title,
+  } = data.index.frontmatter
 
   return (
     <Layout page={title}>
@@ -39,6 +40,7 @@ const IndexPage = ({ data }) => {
         subheading={subheading}
         testimonials={testimonials}
         about={about}
+        concerts={data.concerts.frontmatter.concerts}
       />
     </Layout>
   )
@@ -46,7 +48,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+    index: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         heading
         subheading
@@ -56,6 +58,21 @@ export const query = graphql`
           author
           position
           quote
+        }
+      }
+    }
+    concerts: markdownRemark(
+      frontmatter: { templateKey: { eq: "concerts-page" } }
+    ) {
+      frontmatter {
+        concerts {
+          month
+          concert {
+            date
+            location
+            name
+            venue
+          }
         }
       }
     }

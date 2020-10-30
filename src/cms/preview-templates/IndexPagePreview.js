@@ -10,6 +10,7 @@ const IndexPagePreview = ({ entry }) => {
         subheading={data.subheading}
         testimonials={data.testimonials}
         about={data.about}
+        concerts={data.concerts}
       />
     )
   } else {

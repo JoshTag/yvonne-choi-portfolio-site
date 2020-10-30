@@ -1,5 +1,4 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
 
 import Square from "./square"
 import UpcomingConcertCard from "./upcomingConcertCard"
@@ -74,8 +73,11 @@ const ConcertLink = styled.a`
   padding-top: 2rem;
 `
 
-const UpcomingConcerts = ({ data }) => {
-  const { concerts } = data.markdownRemark.frontmatter
+const UpcomingConcerts = ({ concerts }) => {
+  // Dummy concert created to avoid GraphQL null Error
+  const filterDummy = concerts.filter(
+    item => item.month !== "Dummy Month Do Not Delete"
+  )
 
   return (
     <UpcomingConcertsSection>
@@ -85,41 +87,26 @@ const UpcomingConcerts = ({ data }) => {
             <h2>Upcoming Concerts</h2>
           </div>
         </TitleContainer>
-        {upcomingConcertDates(concerts).map((concert, i) => {
-          return (
-            <UpcomingConcertCard
-              concert={concert}
-              key={`${i}-${concert.name}`}
-            />
-          )
-        })}
+        {upcomingConcertDates(filterDummy).length < 1 ? (
+          <h2>Currently No Upcoming Concert Dates</h2>
+        ) : (
+          upcomingConcertDates(filterDummy).map((concert, i) => {
+            return (
+              <UpcomingConcertCard
+                concert={concert}
+                key={`${i}-${concert.name}`}
+              />
+            )
+          })
+        )}
         <Square top="-18px" left="-17px" />
         <Square top="-18px" right="-17px" />
       </UpcomingConcertContainer>
-      <ConcertLink href="/concerts">View All Concerts</ConcertLink>
+      {upcomingConcertDates(concerts).length < 2 ? null : (
+        <ConcertLink href="/concerts">View All Concerts</ConcertLink>
+      )}
     </UpcomingConcertsSection>
   )
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      {
-        markdownRemark(frontmatter: { title: { eq: "Concerts" } }) {
-          frontmatter {
-            concerts {
-              month
-              concert {
-                date
-                location
-                venue
-                name
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={data => <UpcomingConcerts data={data} />}
-  ></StaticQuery>
-)
+export default UpcomingConcerts

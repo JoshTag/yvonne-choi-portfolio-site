@@ -3,11 +3,11 @@ backend:
   branch: master
 
 # Uncomment for CMS testing
-# local_backend: true
+local_backend: true
 
-# site_url: https://xenodochial-noyce-a4a307.netlify.app
+site_url: https://yvonne-choi-portfolio.netlify.app
 
-# display_url: https://xenodochial-noyce-a4a307.netlify.app
+display_url: https://yvonne-choi-portfolio.netlify.app
 
 # publish_mode: editorial_workflow
 
@@ -98,7 +98,27 @@ collections:
               widget: list,
               fields:
                 [
-                  { label: Month, name: month, widget: string },
+                  {
+                    label: Month,
+                    name: month,
+                    widget: select,
+                    options:
+                      [
+                        "Janurary",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December",
+                        "Dummy Month Do Not Delete"
+                      ],
+                  },
                   {
                     label: Concert,
                     name: concert,

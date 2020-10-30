@@ -122,6 +122,10 @@ const SubHeaderNoPadding = styled.h2`
 `
 
 export const ConcertPageTemplate = ({ concerts }) => {
+  // Dummy concert created to avoid GraphQL null Error
+  const filterDummy = concerts.filter(
+    item => item.month !== "Dummy Month Do Not Delete"
+  )
   return (
     <ConcertSection>
       <ConcertContainer>
@@ -132,23 +136,33 @@ export const ConcertPageTemplate = ({ concerts }) => {
         </ConcertTitle>
         <Square top="-18px" left="-18px" />
         <Square top="-18px" right="-18px" />
-        <SubHeader>Upcoming Concerts</SubHeader>
-        {upcomingConcertDates(concerts).map((concert, i) => {
-          return <UpcomingConcertCard concert={concert} index={i} />
-        })}
-        <SubHeaderNoPadding>All Concerts</SubHeaderNoPadding>
-        {concerts.map(item => {
-          return (
-            <ConcertMonth key={item.month}>
-              <h3>{item.month}</h3>
-              <div>
-                {item.concert.map((v, i) => {
-                  return <ConcertCard key={i} concertInfo={v} />
-                })}
-              </div>
-            </ConcertMonth>
-          )
-        })}
+        {upcomingConcertDates(concerts).length < 2 ? <h4>No Concerts Upcoming</h4> : (
+          <>
+            <SubHeader>Upcoming Concerts</SubHeader>
+            {upcomingConcertDates(filterDummy).map((concert, i) => {
+              return (
+                <UpcomingConcertCard
+                  key={`${i}-upcoming`}
+                  concert={concert}
+                  index={i}
+                />
+              )
+            })}
+            <SubHeaderNoPadding>All Concerts</SubHeaderNoPadding>
+            {filterDummy.map(item => {
+              return (
+                <ConcertMonth key={item.month}>
+                  <h3>{item.month}</h3>
+                  <div>
+                    {item.concert.map((v, i) => {
+                      return <ConcertCard key={i} concertInfo={v} />
+                    })}
+                  </div>
+                </ConcertMonth>
+              )
+            })}
+          </>
+        )}
       </ConcertContainer>
     </ConcertSection>
   )

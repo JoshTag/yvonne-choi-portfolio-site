@@ -65,7 +65,7 @@ const Navigation = ({ page }) => {
   return (
     <Header page={page}>
       <Nav>
-        <div>yvonne</div>
+        <div>Yvonne Choi</div>
         <NavList>
           <li>
             <Link to="/">Home</Link>
