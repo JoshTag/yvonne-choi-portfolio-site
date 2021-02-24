@@ -1,14 +1,16 @@
 ---
-templateKey: 'contact-page'
+templateKey: contact-page
 title: Contact
 services:
   - service: Music Directing
   - service: Solo Piano Performance
   - service: Collaborative Piano Performance
   - service: Music Education (Solo and Chamber Music)
-  - service: Music Coaching
+  - service: Audio Engineering
+  - service: Videography
 specialties:
-  - specialty: All eras of Classical Music
+  - specialty: Classical Music
+  - specialty: Chamber Music
   - specialty: Choral Music
   - specialty: Musical Theatre
   - specialty: Contemporary Pop
