@@ -48,7 +48,9 @@ testimonials:
       singers' development. Her constant yearning to improve makes her a
       wonderful role model to our singers. BONUS: Yvonne is comfortable with
       technology - she works LIVE online with ease, and produces high quality
-      audio recordings as needed. "
+      audio recordings as needed. Her quality output during the pandemic
+      demonstrates her resilience and creativeness in evolving her unique art of
+      collaborative music making!"
     author: Dr. Tracy Wong
     position: Choral Conductor, Educator, Composer
   - quote: When you invite Yvonne to work with you on a project, you should prepare
