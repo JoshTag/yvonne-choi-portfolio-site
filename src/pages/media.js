@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "./../components/layout"
-import Square from "./../components/square"
+import Layout from "../components/layout"
+import Square from "../components/square"
 import styled from "styled-components"
-import { colours, breakpoints } from "./../styles/master"
+import { colours, breakpoints } from "../styles/master"
 
-const RecordingsSection = styled.section`
+const MediaSection = styled.section`
   min-height: 100vh;
   background: ${colours.primary};
   padding: 8rem 0 5rem;
@@ -16,7 +16,7 @@ const RecordingsSection = styled.section`
   }
 `
 
-const RecordingsContainer = styled.div`
+const MediaContainer = styled.div`
   position: relative;
   border-top: 1px solid ${colours.brown};
   width: 320px;
@@ -34,7 +34,7 @@ const RecordingsContainer = styled.div`
   }
 `
 
-const RecordingsTitle = styled.div`
+const MediaTitle = styled.div`
   position: absolute;
   top: -2rem;
   left: 50%;
@@ -72,18 +72,18 @@ const RecordingCard = styled.div`
   }
 `
 
-export const RecordingsPageTemplate = ({ recordings }) => {
+export const MediaPageTemplate = ({ audio }) => {
   return (
-    <RecordingsSection>
-      <RecordingsContainer>
+    <MediaSection>
+      <MediaContainer>
         <Square top="-18px" left="-18px" />
         <Square top="-18px" right="-18px" />
-        <RecordingsTitle>
+        <MediaTitle>
         <div>
-          <h1>Recordings</h1>
+          <h1>Media</h1>
         </div>
-      </RecordingsTitle>
-        {recordings.map((item, i) => {
+      </MediaTitle>
+        {audio.map((item, i) => {
           return (
             <RecordingCard key={i}>
               <h3>{item.title}</h3>
@@ -91,26 +91,26 @@ export const RecordingsPageTemplate = ({ recordings }) => {
             </RecordingCard>
           )
         })}
-      </RecordingsContainer>
-    </RecordingsSection>
+      </MediaContainer>
+    </MediaSection>
   )
 }
 
-const Recordings = ({ data }) => {
-  const { recordings } = data.markdownRemark.frontmatter
+const Media = ({ data }) => {
+  const { audio } = data.markdownRemark.frontmatter
 
   return (
     <Layout>
-      <RecordingsPageTemplate recordings={recordings} />
+      <MediaPageTemplate audio={audio} />
     </Layout>
   )
 }
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: { templateKey: { eq: "recordings-page" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "media-page" } }) {
       frontmatter {
-        recordings {
+        audio {
           iframe
           title
         }
@@ -119,4 +119,4 @@ export const query = graphql`
   }
 `
 
-export default Recordings
+export default Media

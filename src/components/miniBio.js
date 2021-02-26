@@ -13,7 +13,7 @@ const MiniBioContainer = styled.section`
       content: " ";
       position: absolute;
       width: 100%;
-      height: 5rem;
+      height: 1rem;
       background-color: ${colours.black};
     }
   }
@@ -70,7 +70,7 @@ const MiniBioTitle = styled.h2`
 
 const AboutContents = styled.div`
   color: ${colours.primary};
-  padding: 25% 15% 20%;
+  padding: 100px 15% 20%;
 
   @media only screen and (min-width: ${breakpoints.tabletSmall}) {
     padding: 11rem 6rem 8rem;

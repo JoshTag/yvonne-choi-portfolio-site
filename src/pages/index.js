@@ -1,25 +1,34 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
+import { colours } from "./../styles/master"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Testimonials from "../components/testimonials"
 import MiniBio from "../components/miniBio"
-import UpcomingConcerts from "../components/upcomingConcerts.js"
+
+const Footer = styled.footer`
+  background: ${colours.black};
+  color: ${colours.white};
+  height: 100px;
+  display: grid;
+  place-items: center
+`
 
 export const IndexPageTemplate = ({
   heading,
   subheading,
   testimonials,
   about,
-  concerts,
+  heroImg
 }) => {
   return (
     <>
-      <Hero heading={heading} subheading={subheading} />
-      <Testimonials testimonials={testimonials} />
+      <Hero heading={heading} subheading={subheading} heroImg={heroImg} />
       <MiniBio about={about} />
-      {concerts && <UpcomingConcerts concerts={concerts}/>}
+      <Testimonials testimonials={testimonials} />
+      <Footer><small>Copyright 2021, Yvonne Choi</small></Footer>
     </>
   )
 }
@@ -32,6 +41,8 @@ const IndexPage = ({ data }) => {
     about,
     title,
   } = data.index.frontmatter
+  const heroImg = data.heroImg.childImageSharp.fluid
+
 
   return (
     <Layout page={title}>
@@ -40,7 +51,7 @@ const IndexPage = ({ data }) => {
         subheading={subheading}
         testimonials={testimonials}
         about={about}
-        concerts={data.concerts.frontmatter.concerts}
+        heroImg={heroImg}
       />
     </Layout>
   )
@@ -61,18 +72,10 @@ export const query = graphql`
         }
       }
     }
-    concerts: markdownRemark(
-      frontmatter: { templateKey: { eq: "concerts-page" } }
-    ) {
-      frontmatter {
-        concerts {
-          month
-          concert {
-            date
-            location
-            name
-            venue
-          }
+    heroImg: file(relativePath:{ eq: "hero-img.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000, quality: 100) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

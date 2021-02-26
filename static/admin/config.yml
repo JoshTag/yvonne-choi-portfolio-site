@@ -5,9 +5,8 @@ backend:
 # Uncomment for CMS testing
 # local_backend: true
 
-# site_url: https://yvonne-choi-portfolio.netlify.app
-
-# display_url: https://yvonne-choi-portfolio.netlify.app
+# site_url: https://yvonnechoi.ca
+# display_url: https://yvonnechoi.ca
 
 # publish_mode: editorial_workflow
 
@@ -60,26 +59,45 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/content/recordings/index.md"
-        label: "Recordings Page"
-        name: "recordings"
+      - file: "src/content/media/index.md"
+        label: "Media Page"
+        name: "media"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "recordings-page",
+              default: "media-page",
             }
           - { label: "Title", name: "title", widget: "string" }
           - {
-              label: "Recodings",
-              name: "recordings",
+              label: "Audio",
+              name: "audio",
               widget: list,
               fields:
                 [
                   { label: "Title", name: "title", widget: "string" },
                   { label: "Iframe", name: "iframe", widget: "string" },
                 ],
+            }
+          - {
+              label: "Video",
+              name: "video",
+              widget: list,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Link", name: "link", widget: "string" },
+                ],
+            }
+          - {
+            label: "Photos",
+            name: "photos",
+            widget: list,
+            fields:
+              [
+                { label: "Image", name: "image", widget: "file" },
+              ],
             }
       - file: "src/content/concerts/index.md"
         label: "Concerts Page"

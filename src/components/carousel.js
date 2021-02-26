@@ -34,7 +34,7 @@ const TestimonialQuote = styled.p`
   position: relative;
   font-size: 0.75rem;
   line-height: 2;
-  padding: 0 1.5rem;
+  padding: 0 0rem;
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
     font-size: 1rem;
@@ -48,7 +48,7 @@ const TestimonialQuote = styled.p`
     height: 20px;
     background-image: url(${startQuote});
     background-repeat: no-repeat;
-    top: -0.3rem;
+    top: -1rem;
     left: -0.8rem;
   }
   :after {
@@ -58,8 +58,8 @@ const TestimonialQuote = styled.p`
     height: 20px;
     background-image: url(${endQuote});
     background-repeat: no-repeat;
-    bottom: -0.3rem;
-    right: -0.2rem;
+    bottom: -0.8rem;
+    right: -0.6rem;
   }
 `
 

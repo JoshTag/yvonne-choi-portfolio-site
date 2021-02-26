@@ -74,10 +74,7 @@ const Navigation = ({ page }) => {
             <Link to="/biography">Biography</Link>
           </li>
           <li>
-            <Link to="/recordings">Recordings</Link>
-          </li>
-          <li>
-            <Link to="/concerts">Concerts</Link>
+            <Link to="/media">Media</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>

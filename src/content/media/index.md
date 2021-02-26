@@ -1,7 +1,7 @@
 ---
-templateKey: 'recordings-page'
-title: Recordings
-recordings:
+templateKey: 'media-page'
+title: Media
+audio:
   - title: Tidings of Choi
     iframe: <iframe width="100%" height="400px" scrolling="no" frameborder="no"
       allow="autoplay"

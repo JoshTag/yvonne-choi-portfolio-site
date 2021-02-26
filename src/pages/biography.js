@@ -14,7 +14,7 @@ const BioSection = styled.section`
   padding: 8rem 2rem;
 
   @media only screen and (min-width: ${breakpoints.tablet}) {
-    padding: 8rem 5rem 2rem;
+    padding: 8rem 5rem 10rem;
   }
   @media only screen and (min-width: ${breakpoints.desktop}) {
     display: flex;
