@@ -6,13 +6,13 @@ subheading: Hon. B.Mus, M.Mus, ATCL, RCM Certified Teacher
 image: /img/hero-img.png
 testimonials:
   - quote: Music is at the very heart of the life of spiritual gatherings. Glen
-      Abbey United Church is deeply blessed to have Yvonne Choi as its Direct of
-      Music combining what is, literally, world class artistry at the piano;
+      Abbey United Church is deeply blessed to have Yvonne Choi as its Director
+      of Music combining what is, literally, world class artistry at the piano;
       inspiring and pirated teaching and directed of our choir and the joyful
       engaged enthusiasm of youth in all her relationships in our congregation.
       For us, her talent adds immeasurable depth to our church life.
     author: John and Barbara Fleming
-    position: Glen Abbey United Church
+    position: Chartered Members, Glen Abbey United Church
   - quote: We were thrilled to have Yvonne play at our wedding reception. She was
       easy to communicate with beforehand, so we felt confident we were in good
       hands. We had a wide range in the age of our guests and Yvonne was able to
@@ -31,7 +31,7 @@ testimonials:
       a wonderful collaborator and true partner in music-making. And, she’s
       REALLY fun to be around. "
     author: David Anderson
-    position: Artist Director of A Few Good Men (Oakville Choir for Children & Youth)
+    position: Artistic Director of A Few Good Men (Oakville Choir for Children & Youth)
   - quote: Yvonne has made our church’s piano “sing” in a way we’ve never
       experienced before. With incredible musicality, she offers us postludes
       that have the entire congregation entranced and staying in the sanctuary
@@ -40,6 +40,23 @@ testimonials:
       ministry to another level.
     author: Katherine Ward
     position: Choir Member, Glen Abbey United Church
+  - quote: "I never hesitate to contact Yvonne for choral rehearsals and
+      performances as I am always confident of her high quality musical output.
+      She eloquently and sensitively communicates through her playing and
+      coaching of singers. Her quiet confidence, coupled with her flexibility
+      consistently compliments and supports my artistic direction and our
+      singers' development. Her constant yearning to improve makes her a
+      wonderful role model to our singers. BONUS: Yvonne is comfortable with
+      technology - she works LIVE online with ease, and produces high quality
+      audio recordings as needed. "
+    author: Dr. Tracy Wong
+    position: Choral Conductor, Educator, Composer
+  - quote: When you invite Yvonne to work with you on a project, you should prepare
+      yourself for  a joyful collaboration and an uplifting musical experience.
+      Yvonne brings inspiring musicianship and insightful creativity to all of
+      her undertakings.
+    author: Bob Anderson
+    position: Cawthra Park Chamber Choir, Resonance, Raising Voices
 about: >-
   Musical performer in solo and collaborative performance with extensive
   leadership and directing experience. 
