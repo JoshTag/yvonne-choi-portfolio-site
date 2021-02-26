@@ -59,6 +59,15 @@ testimonials:
       her undertakings.
     author: Bob Anderson
     position: Cawthra Park Chamber Choir, Resonance, Raising Voices
+  - quote: At age 11 my dad asked me if I wanted to learn to play the piano.
+      Influenced by my older sister I said no, and I regretted it until I was 58
+      when I decided I really want to learn. I was so lucky to have met Yvonne
+      as my piano teacher. Her incredible patience and her passion for the piano
+      really helped me grow my passion for the instrument. I learned to love
+      many of the classic composers like Beethoven, Debussy, Ravel, Satie and
+      many more. Now retired I have a hobby that will stay with me forever.
+      Thanks to Yvonne
+    author: Vera
 about: >-
   Musical performer in solo and collaborative performance with extensive
   leadership and directing experience. 
