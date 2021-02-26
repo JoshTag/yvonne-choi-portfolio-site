@@ -90,9 +90,7 @@ const Hero = ({ heading, subheading, heroImg }) => {
       <HeroBackground>
         <HeroImg
           fluid={heroImg}
-          fadeIn={true}
           objectFit="fill"
-          objectPosition="50% 50%"
           alt="yvonne choi on her piano"
         />
       </HeroBackground>
