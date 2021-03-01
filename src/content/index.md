@@ -13,14 +13,6 @@ testimonials:
       For us, her talent adds immeasurable depth to our church life.
     author: John and Barbara Fleming
     position: Chartered Members, Glen Abbey United Church
-  - quote: We were thrilled to have Yvonne play at our wedding reception. She was
-      easy to communicate with beforehand, so we felt confident we were in good
-      hands. We had a wide range in the age of our guests and Yvonne was able to
-      put a playlist together that had songs everyone knew. Our guests commented
-      that having a live piano player was a really nice surprise and how much
-      they enjoyed her music. It was a pleasure having Yvonne join us on our
-      special day.
-    author: Brad and Nadia
   - quote: We are a choir of volunteers with a range of ages, experience, and
       abilities. With patience and enthusiasm, Yvonne challenges and encourages
       us, and inspires us to be better than we ever thought we could be. Working
@@ -53,6 +45,14 @@ testimonials:
       collaborative music making!"
     author: Dr. Tracy Wong
     position: Choral Conductor, Educator, Composer
+  - quote: We were thrilled to have Yvonne play at our wedding reception. She was
+      easy to communicate with beforehand, so we felt confident we were in good
+      hands. We had a wide range in the age of our guests and Yvonne was able to
+      put a playlist together that had songs everyone knew. Our guests commented
+      that having a live piano player was a really nice surprise and how much
+      they enjoyed her music. It was a pleasure having Yvonne join us on our
+      special day.
+    author: Brad and Nadia
   - quote: When you invite Yvonne to work with you on a project, you should prepare
       yourself for  a joyful collaboration and an uplifting musical experience.
       Yvonne brings inspiring musicianship and insightful creativity to all of
@@ -68,6 +68,14 @@ testimonials:
       many more. Now retired I have a hobby that will stay with me forever.
       Thanks to Yvonne
     author: Vera
+  - quote: Yvonne is a fantastic collaborative pianist with whom I have had the
+      pleasure of working, as a solo singer, a studio voice teacher, and as a
+      choral conductor. Yvonne is extremely versatile in styles of repertoire,
+      and always brings an infectious energy and incredible attention to detail
+      to her musical performances. It is truly an enriching experience to make
+      music with Yvonne.
+    author: Dr. Charlene Pauls
+    position: Soprano, Conductor, Educator
 about: >-
   Musical performer in solo and collaborative performance with extensive
   leadership and directing experience. 
