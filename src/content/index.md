@@ -68,6 +68,14 @@ testimonials:
       many more. Now retired I have a hobby that will stay with me forever.
       Thanks to Yvonne
     author: Vera
+  - quote: It's always a great pleasure to collaborate with Yvonne. Her superb
+      leadership is complimented by her exemplary sight reading skills, thorough
+      understanding of scores and effortless sensitive playing. Yvonne is that
+      pianist who can anticipate your every moves, and support you however you
+      needed! We are so grateful for you, Yvonne!!
+    author: Dr. Elaine Choi
+    position: Founder/Artistic Director of Babεl, Director of Music, Timothy Eaton
+      Memorial Church
   - quote: Yvonne is a fantastic collaborative pianist with whom I have had the
       pleasure of working, as a solo singer, a studio voice teacher, and as a
       choral conductor. Yvonne is extremely versatile in styles of repertoire,
