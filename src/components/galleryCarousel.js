@@ -10,8 +10,8 @@ const GalleryCarousel = ({ photos }) => {
   const [nav1, setNav1] = useState(null)
   const [nav2, setNav2] = useState(null)
 
-  const slider1 = createRef(slider1)
-  const slider2 = createRef(slider2)
+  const slider1 = createRef(null)
+  const slider2 = createRef(null)
 
   useEffect(() => {
     const sliderOne = slider1.current
