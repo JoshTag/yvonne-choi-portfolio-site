@@ -1,4 +1,5 @@
 ---
+templateKey: gallery-page
 title: Gallery
 photos:
   - image: /img/img_9170-min.jpg

@@ -80,16 +80,32 @@ const VideoWrapper = styled.div`
   & > h3 {
     font-weight: 600;
     font-size: 1.5rem;
+    padding: 1rem 0 0;
   }
 `
 
 const VideoCard = styled.div`
-    padding: 1rem 0;
+  padding: 1rem 0;
 
-    & > h4 {
+  & > h4 {
     font-size: 1.25rem;
     padding-bottom: 1rem;
     font-weight: 400;
+  }
+`
+
+const VideoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 `
 
@@ -115,25 +131,43 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
             )
           })}
         </AudioWrapper>
-        {/* <VideoWrapper>
+        <VideoWrapper>
           <h2>Videos</h2>
           <h3>Solo</h3>
           {solo.map((item, i) => {
             return (
               <VideoCard>
                 <h4>{item.title}</h4>
-                <video width="100%" controls>
-                  <source
-                    src="/images/projects/studio-zoubida/product-video.mp4"
-                    type="video/mp4"
-                  />
-                  Sorry, your browser doesn't support embedded videos.
-                </video>
+                <VideoContainer>
+                  <iframe
+                    title={item.title}
+                    src={item.link}
+                    frameborder="0"
+                    allowfullscreen
+                    class="video"
+                  ></iframe>
+                </VideoContainer>
               </VideoCard>
             )
           })}
           <h3>Colab</h3>
-        </VideoWrapper> */}
+          {colab.map((item, i) => {
+            return (
+              <VideoCard>
+                <h4>{item.title}</h4>
+                <VideoContainer>
+                  <iframe
+                    title={item.title}
+                    src={item.link}
+                    frameborder="0"
+                    allowfullscreen
+                    class="video"
+                  ></iframe>
+                </VideoContainer>
+              </VideoCard>
+            )
+          })}
+        </VideoWrapper>
       </RecordingsContainer>
     </RecordingsSection>
   )

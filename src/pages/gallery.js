@@ -1,6 +1,6 @@
 import React from "react"
-// import { graphql } from "gatsby"
-
+import { graphql } from "gatsby"
+import GalleryCarousel from "../components/galleryCarousel"
 import Layout from "../components/layout"
 import Square from "../components/square"
 import styled from "styled-components"
@@ -58,42 +58,43 @@ const GalleryTitle = styled.div`
   }
 `
 
-export const GalleryPageTemplate = () => {
+export const GalleryPageTemplate = ({ photos }) => {
   return (
     <GallerySection>
       <GalleryContainer>
         <Square top="-18px" left="-18px" />
         <Square top="-18px" right="-18px" />
         <GalleryTitle>
-        <div>
-          <h1>Gallery</h1>
-        </div>
-      </GalleryTitle>
-
+          <div>
+            <h1>Gallery</h1>
+          </div>
+        </GalleryTitle>
+        <GalleryCarousel photos={photos} />
       </GalleryContainer>
     </GallerySection>
   )
 }
 
-const Gallery = () => {
+const Gallery = ({ data }) => {
+  const { photos } = data.markdownRemark.frontmatter
+
   return (
     <Layout>
-      <GalleryPageTemplate />
+      <GalleryPageTemplate photos={photos} />
     </Layout>
   )
 }
 
-// export const query = graphql`
-//   {
-//     markdownRemark(frontmatter: { templateKey: { eq: "Gallery-page" } }) {
-//       frontmatter {
-//         audio {
-//           iframe
-//           title
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  {
+    markdownRemark(frontmatter: { templateKey: { eq: "gallery-page" } }) {
+      frontmatter {
+        photos {
+          image
+        }
+      }
+    }
+  }
+`
 
 export default Gallery
