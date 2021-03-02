@@ -32,6 +32,12 @@ const RecordingsContainer = styled.div`
   @media only screen and (min-width: ${breakpoints.desktopLarge}) {
     width: 1000px;
   }
+
+  & h2 {
+    font-size: 1.75rem;
+    padding: 1.5rem 0;
+    font-weight: 600;
+  }
 `
 
 const RecordingsTitle = styled.div`
@@ -58,52 +64,89 @@ const RecordingsTitle = styled.div`
   }
 `
 
+const AudioWrapper = styled.div``
+
 const RecordingCard = styled.div`
-  padding: 2rem 0;
+  padding: 1rem 0;
 
   & > h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding-bottom: 1rem;
-    font-weight: 600;
-
-    @media only screen and (min-width: ${breakpoints.desktop}){
-      font-size: 2rem;
-    }
+    font-weight: 400;
   }
 `
 
-export const RecordingsPageTemplate = ({ audio }) => {
+const VideoWrapper = styled.div`
+  & > h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+`
+
+const VideoCard = styled.div`
+    padding: 1rem 0;
+
+    & > h4 {
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+    font-weight: 400;
+  }
+`
+
+export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
   return (
     <RecordingsSection>
       <RecordingsContainer>
         <Square top="-18px" left="-18px" />
         <Square top="-18px" right="-18px" />
         <RecordingsTitle>
-        <div>
-          <h1>Recordings</h1>
-        </div>
-      </RecordingsTitle>
-        {audio.map((item, i) => {
-          return (
-            <RecordingCard key={i}>
-              <h3>{item.title}</h3>
-              <div dangerouslySetInnerHTML={{ __html: item.iframe }} />
-            </RecordingCard>
-          )
-        })}
+          <div>
+            <h1>Recordings</h1>
+          </div>
+        </RecordingsTitle>
+        <AudioWrapper>
+          <h2>Audio</h2>
+          {audio.map((item, i) => {
+            return (
+              <RecordingCard key={i}>
+                <h3>{item.title}</h3>
+                <div dangerouslySetInnerHTML={{ __html: item.iframe }} />
+              </RecordingCard>
+            )
+          })}
+        </AudioWrapper>
+        {/* <VideoWrapper>
+          <h2>Videos</h2>
+          <h3>Solo</h3>
+          {solo.map((item, i) => {
+            return (
+              <VideoCard>
+                <h4>{item.title}</h4>
+                <video width="100%" controls>
+                  <source
+                    src="/images/projects/studio-zoubida/product-video.mp4"
+                    type="video/mp4"
+                  />
+                  Sorry, your browser doesn't support embedded videos.
+                </video>
+              </VideoCard>
+            )
+          })}
+          <h3>Colab</h3>
+        </VideoWrapper> */}
       </RecordingsContainer>
     </RecordingsSection>
   )
 }
 
 const Recordings = ({ data }) => {
-  const { audio } = data.markdownRemark.frontmatter
+  const { audio, solo, colab } = data.markdownRemark.frontmatter
 
-  console.log(audio)
+  console.log(solo, colab)
 
   return (
     <Layout>
-      <RecordingsPageTemplate audio={audio} />
+      <RecordingsPageTemplate audio={audio} solo={solo} colab={colab} />
     </Layout>
   )
 }
@@ -115,6 +158,14 @@ export const query = graphql`
         audio {
           iframe
           title
+        }
+        solo {
+          title
+          link
+        }
+        colab {
+          title
+          link
         }
       }
     }
