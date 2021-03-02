@@ -53,11 +53,11 @@ const TextGroup = styled.div`
   }
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
-    padding: 11rem 0 0 11rem;
+    padding: 13rem 0 0 11rem;
   }
 
   @media only screen and (min-width: ${breakpoints.desktopLarge}) {
-    padding: 11rem 0 0 15rem;
+    padding: 13rem 0 0 15rem;
   }
 `
 

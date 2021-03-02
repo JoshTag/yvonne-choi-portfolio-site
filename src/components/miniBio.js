@@ -21,17 +21,17 @@ const MiniBioContainer = styled.section`
 
 const MiniBioBoarder = styled.div`
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 5%;
   width: 90%;
-  height: 85%;
+  height: 75%;
   border: solid ${colours.primary} 1px;
 
   @media only screen and (min-width: ${breakpoints.tablet}) {
-    top: 15%;
+    top: 20%;
     left: 6%;
     width: 88%;
-    height: 75%;
+    height: 70%;
   }
 `
 
@@ -84,6 +84,10 @@ const BioParagraph = styled.p`
   font-size: 0.75rem;
   line-height: 2.5;
   margin-bottom: 1.5rem;
+
+  @media only screen and (min-width: ${breakpoints.tabletSmall}) {
+    font-size: 0.85rem;
+  }
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
     font-size: 1rem;

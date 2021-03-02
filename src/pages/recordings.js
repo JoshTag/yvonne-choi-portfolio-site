@@ -6,7 +6,7 @@ import Square from "../components/square"
 import styled from "styled-components"
 import { colours, breakpoints } from "../styles/master"
 
-const MediaSection = styled.section`
+const RecordingsSection = styled.section`
   min-height: 100vh;
   background: ${colours.primary};
   padding: 8rem 0 5rem;
@@ -16,7 +16,7 @@ const MediaSection = styled.section`
   }
 `
 
-const MediaContainer = styled.div`
+const RecordingsContainer = styled.div`
   position: relative;
   border-top: 1px solid ${colours.brown};
   width: 320px;
@@ -34,7 +34,7 @@ const MediaContainer = styled.div`
   }
 `
 
-const MediaTitle = styled.div`
+const RecordingsTitle = styled.div`
   position: absolute;
   top: -2rem;
   left: 50%;
@@ -72,17 +72,17 @@ const RecordingCard = styled.div`
   }
 `
 
-export const MediaPageTemplate = ({ audio }) => {
+export const RecordingsPageTemplate = ({ audio }) => {
   return (
-    <MediaSection>
-      <MediaContainer>
+    <RecordingsSection>
+      <RecordingsContainer>
         <Square top="-18px" left="-18px" />
         <Square top="-18px" right="-18px" />
-        <MediaTitle>
+        <RecordingsTitle>
         <div>
-          <h1>Media</h1>
+          <h1>Recordings</h1>
         </div>
-      </MediaTitle>
+      </RecordingsTitle>
         {audio.map((item, i) => {
           return (
             <RecordingCard key={i}>
@@ -91,24 +91,26 @@ export const MediaPageTemplate = ({ audio }) => {
             </RecordingCard>
           )
         })}
-      </MediaContainer>
-    </MediaSection>
+      </RecordingsContainer>
+    </RecordingsSection>
   )
 }
 
-const Media = ({ data }) => {
+const Recordings = ({ data }) => {
   const { audio } = data.markdownRemark.frontmatter
+
+  console.log(audio)
 
   return (
     <Layout>
-      <MediaPageTemplate audio={audio} />
+      <RecordingsPageTemplate audio={audio} />
     </Layout>
   )
 }
 
 export const query = graphql`
   {
-    markdownRemark(frontmatter: { templateKey: { eq: "media-page" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "recordings-page" } }) {
       frontmatter {
         audio {
           iframe
@@ -119,4 +121,4 @@ export const query = graphql`
   }
 `
 
-export default Media
+export default Recordings

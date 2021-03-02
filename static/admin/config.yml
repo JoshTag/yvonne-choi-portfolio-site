@@ -3,10 +3,10 @@ backend:
   branch: master
 
 # Uncomment for CMS testing
-# local_backend: true
+local_backend: true
 
-# site_url: https://yvonnechoi.ca
-# display_url: https://yvonnechoi.ca
+site_url: https://yvonnechoi.ca
+display_url: https://yvonnechoi.ca
 
 # publish_mode: editorial_workflow
 
@@ -59,15 +59,15 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/content/media/index.md"
-        label: "Media Page"
-        name: "media"
+      - file: "src/content/recordings/index.md"
+        label: "Recordings Page"
+        name: "recordings"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "media-page",
+              default: "recordings-page",
             }
           - { label: "Title", name: "title", widget: "string" }
           - {
@@ -81,8 +81,8 @@ collections:
                 ],
             }
           - {
-              label: "Video",
-              name: "video",
+              label: "Solo Videos",
+              name: "solo",
               widget: list,
               fields:
                 [
@@ -91,14 +91,15 @@ collections:
                 ],
             }
           - {
-            label: "Photos",
-            name: "photos",
-            widget: list,
-            fields:
-              [
-                { label: "Image", name: "image", widget: "file" },
-              ],
-            }
+              label: "Colab Videos",
+              name: "colab",
+              widget: list,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Link", name: "link", widget: "string" },
+                ],
+              }
       - file: "src/content/concerts/index.md"
         label: "Concerts Page"
         name: "concerts"

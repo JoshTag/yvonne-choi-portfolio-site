@@ -23,7 +23,7 @@ const Header = styled.header`
   }
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
-    height: 80px;
+    height: 10%;
   }
 `
 
@@ -74,7 +74,7 @@ const Navigation = ({ page }) => {
             <Link to="/biography">Biography</Link>
           </li>
           <li>
-            <Link to="/media">Media</Link>
+            <Link to="/recordings">Recordings</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>

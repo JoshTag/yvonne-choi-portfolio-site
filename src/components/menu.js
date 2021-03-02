@@ -67,8 +67,8 @@ const Navigation = () => {
         <MenuItem className="menu-item" to="/biography/">
           Biography
         </MenuItem>
-        <MenuItem className="menu-item" to="/media/">
-          Media
+        <MenuItem className="menu-item" to="/recordings/">
+          Recordings
         </MenuItem>
         <MenuItem className="menu-item" to="/contact/">
           Contact
