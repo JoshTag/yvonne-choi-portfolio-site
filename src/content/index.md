@@ -8,7 +8,7 @@ testimonials:
   - quote: Music is at the very heart of the life of spiritual gatherings. Glen
       Abbey United Church is deeply blessed to have Yvonne Choi as its Director
       of Music combining what is, literally, world class artistry at the piano;
-      inspiring and pirated teaching and directed of our choir and the joyful
+      inspiring and spirited teaching and directed of our choir and the joyful
       engaged enthusiasm of youth in all her relationships in our congregation.
       For us, her talent adds immeasurable depth to our church life.
     author: John and Barbara Fleming
