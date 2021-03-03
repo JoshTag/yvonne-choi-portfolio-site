@@ -28,6 +28,10 @@ const QuoteContainer = styled.div`
   @media only screen and (min-width: ${breakpoints.desktopLarge}) {
     padding: 3rem 5rem;
   }
+
+  &:focus {
+    outline: none;
+  }
 `
 
 const TestimonialQuote = styled.p`

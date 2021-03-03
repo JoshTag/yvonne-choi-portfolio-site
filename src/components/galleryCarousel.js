@@ -49,6 +49,10 @@ const ThumbnailWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  &:focus {
+    outline: none;
+  }
 `
 
 const GalleryCarousel = ({ photos }) => {

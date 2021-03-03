@@ -27,6 +27,11 @@ const MiniBioBoarder = styled.div`
   height: 75%;
   border: solid ${colours.primary} 1px;
 
+  @media only screen and (min-width: ${breakpoints.tabletSmall}) {
+    left: 6%;
+    width: 88%;
+  }
+
   @media only screen and (min-width: ${breakpoints.tablet}) {
     top: 20%;
     left: 6%;

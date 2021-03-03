@@ -16,3 +16,7 @@ body {
     display: none;
   }
 }
+
+.bm-item:focus {
+  outline: none;
+}

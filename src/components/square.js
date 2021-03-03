@@ -5,7 +5,7 @@ import { colours } from "../styles/master"
 const BorderSquare = styled.div`
   display: none;
 
-  @media only screen and (min-width: 375px) {
+  @media only screen and (min-width: 600px) {
     position: absolute;
     top: ${props => props.top};
     bottom: ${props => props.bottom};
