@@ -176,8 +176,6 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
 const Recordings = ({ data }) => {
   const { audio, solo, colab } = data.markdownRemark.frontmatter
 
-  console.log(solo, colab)
-
   return (
     <Layout>
       <RecordingsPageTemplate audio={audio} solo={solo} colab={colab} />
