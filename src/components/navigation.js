@@ -61,15 +61,21 @@ const NavList = styled.ul`
   }
 `
 
+const HomeLogo = styled.div`
+  color: white;
+
+  & > a {
+    color: inherit;
+    text-decoration: none;
+  }
+`
+
 const Navigation = ({ page }) => {
   return (
     <Header page={page}>
       <Nav>
-        <div>Yvonne Choi</div>
+        <HomeLogo><Link to="/">Yvonne Choi</Link></HomeLogo>
         <NavList>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
           <li>
             <Link to="/biography">Biography</Link>
           </li>
