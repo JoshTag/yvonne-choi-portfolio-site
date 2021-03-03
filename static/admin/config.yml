@@ -3,10 +3,10 @@ backend:
   branch: master
 
 # Uncomment for CMS testing
-local_backend: true
+# local_backend: true
 
-site_url: https://yvonnechoi.ca
-display_url: https://yvonnechoi.ca
+# site_url: https://yvonnechoi.ca
+# display_url: https://yvonnechoi.ca
 
 # publish_mode: editorial_workflow
 
