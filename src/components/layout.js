@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Helmet } from "react-helmet"
 import Menu from "./menu"
-import icon from "./../img/favicon.ico"
 import Navigation from "./navigation"
 import "../styles/styles.scss"
 
@@ -29,7 +28,6 @@ const Layout = ({ page, children }) => {
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <html lang="en" />
-        <link rel="icon" type="image/png" sizes="16x16" href={icon} />
         <title>{title}</title>
       </Helmet>
       <div className="burger-menu">
