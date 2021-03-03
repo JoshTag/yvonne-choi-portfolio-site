@@ -124,7 +124,7 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
           <h2>Audio</h2>
           {audio.map((item, i) => {
             return (
-              <RecordingCard key={i}>
+              <RecordingCard key={`recording ${i}`}>
                 <h3>{item.title}</h3>
                 <div dangerouslySetInnerHTML={{ __html: item.iframe }} />
               </RecordingCard>
@@ -136,15 +136,15 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
           <h3>Solo</h3>
           {solo.map((item, i) => {
             return (
-              <VideoCard>
+              <VideoCard key={`solo ${i}`}>
                 <h4>{item.title}</h4>
                 <VideoContainer>
                   <iframe
                     title={item.title}
                     src={item.link}
-                    frameborder="0"
-                    allowfullscreen
-                    class="video"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="video"
                   ></iframe>
                 </VideoContainer>
               </VideoCard>
@@ -153,15 +153,15 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
           <h3>Colab</h3>
           {colab.map((item, i) => {
             return (
-              <VideoCard>
+              <VideoCard key={`colab ${i}`}>
                 <h4>{item.title}</h4>
                 <VideoContainer>
                   <iframe
                     title={item.title}
                     src={item.link}
-                    frameborder="0"
-                    allowfullscreen
-                    class="video"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="video"
                   ></iframe>
                 </VideoContainer>
               </VideoCard>
