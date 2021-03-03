@@ -7,7 +7,7 @@ import { colours, breakpoints } from "../styles/master"
 const TestimonialsSection = styled.section`
   position: relative;
   background-color: ${colours.primary};
-  height: 650px;
+  height: 900px;
 
   @media only screen and (min-width: ${breakpoints.desktop}) {
     height: 760px;

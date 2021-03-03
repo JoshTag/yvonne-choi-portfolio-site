@@ -14,7 +14,7 @@ const CarouselContainer = styled.div`
 
 const QuoteContainer = styled.div`
   padding: 1rem;
-  height: 450px;
+  /* height: 700px; */
   display: grid !important;
   place-items: center;
 
@@ -95,6 +95,7 @@ export default class Carousel extends Component {
         {
           breakpoint: 700,
           settings: {
+            dots: false,
             slidesToShow: 1,
             slidesToScroll: 1,
           },

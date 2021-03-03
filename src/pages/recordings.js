@@ -133,7 +133,7 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
         </AudioWrapper>
         <VideoWrapper>
           <h2>Videos</h2>
-          <h3>Solo</h3>
+          {solo.length > 0 && <h3>Solo</h3>}
           {solo.map((item, i) => {
             return (
               <VideoCard key={`solo ${i}`}>
@@ -150,7 +150,7 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
               </VideoCard>
             )
           })}
-          <h3>Colab</h3>
+          {colab.length > 0 && <h3>Colab</h3>}
           {colab.map((item, i) => {
             return (
               <VideoCard key={`colab ${i}`}>
