@@ -13,7 +13,5 @@ audio:
 solo:
   - title: Yvonne Concerts
     link: https://www.youtube.com/embed/lg0E7N7ZTP4
-colab:
-  - title: Yvonne Concerts 2
-    link: https://www.youtube.com/embed/lg0E7N7ZTP4
+colab: []
 ---
