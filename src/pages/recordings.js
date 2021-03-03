@@ -132,7 +132,7 @@ export const RecordingsPageTemplate = ({ audio, solo, colab }) => {
           })}
         </AudioWrapper>
         <VideoWrapper>
-          <h2>Videos</h2>
+          {solo.length > 0 && solo.length > 0 && <h2>Videos</h2>}
           {solo.length > 0 && <h3>Solo</h3>}
           {solo.map((item, i) => {
             return (
