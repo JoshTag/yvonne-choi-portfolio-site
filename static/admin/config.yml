@@ -3,10 +3,10 @@ backend:
   branch: master
 
 # Uncomment for CMS testing
-local_backend: true
+# local_backend: true
 
-site_url: https://yvonnechoi.ca
-display_url: https://yvonnechoi.ca
+# site_url: https://yvonnechoi.ca
+# display_url: https://yvonnechoi.ca
 
 media_folder: static/img
 public_folder: /img
@@ -102,6 +102,7 @@ collections:
               label: "Solo Videos",
               name: "solo",
               widget: list,
+              required: false,
               fields:
                 [
                   { label: "Title", name: "title", widget: "string" },
@@ -112,6 +113,7 @@ collections:
               label: "Colab Videos",
               name: "colab",
               widget: list,
+              required: false,
               fields:
                 [
                   { label: "Title", name: "title", widget: "string" },
